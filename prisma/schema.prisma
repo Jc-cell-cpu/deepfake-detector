@@ -1,0 +1,36 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+
+datasource db {
+  provider = "sqlite"
+  url = "file:./dev.db"
+}
+
+model User {
+  id              Int      @id @default(autoincrement())
+  email           String   @unique
+  name            String?
+  password        String?
+  username        String?  @unique
+  image           String?  // URL or path to profile picture
+  twoFactorEnabled Boolean @default(false)
+  twoFactorSecret String?  // Secret for 2FA (e.g., TOTP)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  passwordUpdatedAt DateTime? // Tracks when password was last updated
+  profilePicUpdatedAt DateTime? // Tracks when profile picture was last updated
+  passwordExpiresAt DateTime? // Expiration date for password
+  images          Image[]
+}
+
+model Image {
+  id           Int      @id @default(autoincrement())
+  userId       Int
+  user         User     @relation(fields: [userId], references: [id])
+  filePath     String
+  result       String
+  probability  Float
+  createdAt    DateTime @default(now())
+}
