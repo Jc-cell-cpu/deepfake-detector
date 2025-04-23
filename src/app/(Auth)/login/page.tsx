@@ -2,7 +2,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState, useEffect } from "react"
 import { signIn } from "next-auth/react"
 import { useRouter } from "next/navigation"
@@ -12,6 +11,8 @@ import { Shield, Mail, Lock, ArrowRight, AlertCircle, Fingerprint, Eye, EyeOff, 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { debounce } from "lodash";
+
 
 export default function LoginPage() {
     const router = useRouter()
@@ -23,6 +24,7 @@ export default function LoginPage() {
     const [error, setError] = useState("")
     const [showPassword, setShowPassword] = useState(false)
     const [formFocused, setFormFocused] = useState(false)
+    const [checking2FA, setChecking2FA] = useState(false);
 
     // For the animated background
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
@@ -38,10 +40,41 @@ export default function LoginPage() {
         }
     }, [])
 
+    // Check 2FA status when email changes
+    useEffect(() => {
+        const check2FA = async () => {
+            if (!email) {
+                setShow2FA(false);
+                setChecking2FA(false);
+                return;
+            }
+            setChecking2FA(true);
+            try {
+                const res = await fetch("/api/check-2fa", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ email }),
+                });
+                const data = await res.json();
+                if (res.ok) {
+                    setShow2FA(data.twoFactorEnabled);
+                } else {
+                    setShow2FA(false);
+                }
+            } catch (err) {
+                console.error("Failed to check 2FA status:", err);
+                setShow2FA(false);
+            } finally {
+                setChecking2FA(false);
+            }
+        };
+        check2FA();
+    }, [email]);
+
     const handleLogin = async (e: React.FormEvent) => {
-        e.preventDefault()
-        setLoading(true)
-        setError("")
+        e.preventDefault();
+        setLoading(true);
+        setError("");
 
         try {
             const res = await signIn("credentials", {
@@ -49,25 +82,38 @@ export default function LoginPage() {
                 email,
                 password,
                 twoFACode: show2FA ? twoFACode : undefined,
-            })
+            });
 
             if (res?.ok) {
-                router.push("/") // redirect on success
-            } else if (res?.error === null && res?.ok && res.status === 200) {
-                router.push("/dashboard")
-            } else if (res?.status === 401) {
-                // 2FA flow
-                setShow2FA(true)
-                setError("Enter your 2FA code to continue.")
+                router.push("/"); // Redirect on success
+            } else if (res?.error) {
+                switch (res.error) {
+                    case "MISSING_CREDENTIALS":
+                        setError("Please provide both email and password.");
+                        break;
+                    case "USER_NOT_FOUND":
+                    case "INVALID_CREDENTIALS":
+                        setError("Invalid email or password.");
+                        break;
+                    case "2FA_REQUIRED":
+                        setShow2FA(true);
+                        setError("Two-factor authentication is required. Please enter your 2FA code.");
+                        break;
+                    case "INVALID_2FA_CODE":
+                        setError("Invalid 2FA code. Please try again.");
+                        break;
+                    default:
+                        setError("An unexpected error occurred. Please try again.");
+                }
             } else {
-                setError("Invalid login credentials or 2FA code.")
+                setError("An unexpected error occurred. Please try again.");
             }
         } catch (err) {
-            setError("An unexpected error occurred. Please try again.")
+            setError("An unexpected error occurred. Please try again.");
         } finally {
-            setLoading(false)
+            setLoading(false);
         }
-    }
+    };
 
     return (
         <div className="min-h-screen flex flex-col items-center justify-center px-4 py-12 relative overflow-hidden">
@@ -130,13 +176,11 @@ export default function LoginPage() {
                     className="w-full max-w-md"
                 >
                     <div
-                        className={`bg-slate-800/50 backdrop-blur-md border ${formFocused ? "border-purple-500/50" : "border-slate-700/50"
-                            } rounded-2xl shadow-xl overflow-hidden transition-all duration-300`}
+                        className={`bg-slate-800/50 backdrop-blur-md border ${formFocused ? "border-purple-500/50" : "border-slate-700/50"} rounded-2xl shadow-xl overflow-hidden transition-all duration-300`}
                     >
                         {/* Glowing top border when form is focused */}
                         <div
-                            className={`h-1 w-full bg-gradient-to-r from-purple-600 to-pink-600 transform origin-left transition-transform duration-500 ease-out ${formFocused ? "scale-x-100" : "scale-x-0"
-                                }`}
+                            className={`h-1 w-full bg-gradient-to-r from-purple-600 to-pink-600 transform origin-left transition-transform duration-500 ease-out ${formFocused ? "scale-x-100" : "scale-x-0"}`}
                         />
 
                         <div className="p-8">
@@ -345,6 +389,13 @@ export default function LoginPage() {
             {/* Decorative elements */}
             <div className="absolute top-10 left-10 w-20 h-20 border border-purple-500/20 rounded-full animate-pulse opacity-30"></div>
             <div className="absolute bottom-10 right-10 w-32 h-32 border border-pink-500/20 rounded-full animate-pulse opacity-30"></div>
+
+            {checking2FA && (
+                <div className="text-slate-300 text-sm flex items-center gap-2">
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                    Checking 2FA status...
+                </div>
+            )}
         </div>
     )
 }

@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "D:\\College_Minor_Project\\deepfake-detector\\logs\\.4296f3ae88d1df5bd8f0142338c6b7059c2fc90e-audit.json",
+    "files": [
+        {
+            "date": 1745407899369,
+            "name": "D:\\College_Minor_Project\\deepfake-detector\\logs\\error-2025-04-23.log",
+            "hash": "f15cf7899cb161d978b6f1ebe2c5c45171fe475c701cc44631e3bf9f6cd82793"
+        }
+    ],
+    "hashType": "sha256"
+}

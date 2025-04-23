@@ -1,10 +1,11 @@
-// app/api/auth/[...nextauth]/route.ts
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { PrismaClient } from "@prisma/client";
 import bcrypt from "bcrypt";
 import { NextAuthOptions } from "next-auth";
 import { authenticator } from "otplib";
+import logger from "@/lib/logger";
 
 const prisma = new PrismaClient();
 
@@ -23,11 +24,11 @@ export const authOptions: NextAuthOptions = {
         },
       },
       async authorize(credentials) {
-        console.log("Starting authorization...");
+        logger.info("Starting authorization", { email: credentials?.email });
 
         if (!credentials?.email || !credentials?.password) {
-          console.log("Missing credentials");
-          return null;
+          logger.warn("Missing credentials", { email: credentials?.email });
+          throw new Error("MISSING_CREDENTIALS");
         }
 
         const user = await prisma.user.findUnique({
@@ -35,9 +36,15 @@ export const authOptions: NextAuthOptions = {
         });
 
         if (!user) {
-          console.log("User not found");
-          return null;
+          logger.warn("User not found", { email: credentials.email });
+          throw new Error("USER_NOT_FOUND");
         }
+
+        logger.debug("User details", {
+          email: user.email,
+          twoFactorEnabled: user.twoFactorEnabled,
+          twoFactorSecret: user.twoFactorSecret ? "set" : "not set",
+        });
 
         const isValidPassword = await bcrypt.compare(
           credentials.password,
@@ -45,36 +52,51 @@ export const authOptions: NextAuthOptions = {
         );
 
         if (!isValidPassword) {
-          console.log("Invalid password");
-          return null;
+          logger.warn("Invalid password", { email: credentials.email });
+          throw new Error("INVALID_CREDENTIALS");
         }
 
-        console.log("Password is valid");
+        logger.info("Password is valid", { email: credentials.email });
 
         if (user.twoFactorEnabled && user.twoFactorSecret) {
-          console.log("2FA is enabled");
-          console.log("User 2FA secret:", user.twoFactorSecret);
+          logger.info("2FA is enabled", { email: credentials.email });
 
           const providedCode = credentials.twoFACode || "";
-          console.log("2FA code provided:", providedCode);
-          console.log("Verifying 2FA code:", providedCode);
+          if (!providedCode) {
+            logger.info("2FA code required but not provided", {
+              email: credentials.email,
+            });
+            throw new Error("2FA_REQUIRED");
+          }
+
+          logger.debug("Verifying 2FA code", {
+            email: credentials.email,
+            providedCode,
+          });
 
           const generatedCode = authenticator.generate(user.twoFactorSecret);
-          console.log("Generated Code (server):", generatedCode);
-          console.log("User Provided Code:", providedCode);
+          logger.debug("Generated 2FA code", {
+            email: credentials.email,
+            generatedCode,
+          });
 
           const isValid = authenticator.check(
             providedCode,
             user.twoFactorSecret
           );
-          console.log("Is Valid:", isValid);
+          logger.debug("2FA validation result", {
+            email: credentials.email,
+            isValid,
+          });
 
           if (!isValid) {
-            console.log("Invalid 2FA code");
-            return null;
+            logger.warn("Invalid 2FA code", { email: credentials.email });
+            throw new Error("INVALID_2FA_CODE");
           }
 
-          console.log("2FA valid, login success");
+          logger.info("2FA valid, login success", { email: credentials.email });
+        } else {
+          logger.info("2FA not enabled for user", { email: credentials.email });
         }
 
         return {
@@ -90,7 +112,11 @@ export const authOptions: NextAuthOptions = {
       if (user) {
         token.id = user.id;
         token.email = user.email;
-        token.image = user.image; // Add this
+        token.image = user.image;
+        logger.debug("Updated JWT token", {
+          userId: user.id,
+          email: user.email,
+        });
       }
       return token;
     },
@@ -98,7 +124,11 @@ export const authOptions: NextAuthOptions = {
       if (session.user) {
         session.user.id = token.id as string;
         session.user.email = token.email as string;
-        session.user.image = token.image as string; //
+        session.user.image = token.image as string;
+        logger.debug("Updated session", {
+          userId: token.id,
+          email: token.email,
+        });
       }
       return session;
     },

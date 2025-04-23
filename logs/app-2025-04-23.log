@@ -1,0 +1,155 @@
+2025-04-23 17:01:39 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-23 17:02:00 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-23 17:02:01 [WARN]: Invalid password {"email":"kkjj52123@gmail.com"}
+2025-04-23 17:02:11 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-23 17:02:11 [WARN]: Invalid password {"email":"kkjj52123@gmail.com"}
+2025-04-23 17:03:39 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-23 17:03:39 [WARN]: Invalid password {"email":"kkjj52123@gmail.com"}
+2025-04-23 17:07:11 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-23 17:07:11 [WARN]: Invalid password {"email":"kkjj52123@gmail.com"}
+2025-04-23 17:07:27 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-23 17:07:27 [WARN]: Invalid password {"email":"kkjj52123@gmail.com"}
+2025-04-23 17:14:21 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-23 17:14:21 [WARN]: Invalid password {"email":"kkjj52123@gmail.com"}
+2025-04-23 17:14:34 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-23 17:14:34 [INFO]: Password is valid {"email":"kkjj52123@gmail.com"}
+2025-04-23 17:14:34 [DEBUG]: Updated JWT token {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-23 17:14:35 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-23 17:14:37 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-23 17:15:00 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-23 17:15:25 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-23 17:15:25 [WARN]: Invalid password {"email":"kkjj52123@gmail.com"}
+2025-04-23 17:15:51 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-23 17:15:51 [WARN]: Invalid password {"email":"kkjj52123@gmail.com"}
+2025-04-23 17:15:57 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-23 17:15:57 [WARN]: Invalid password {"email":"kkjj52123@gmail.com"}
+2025-04-23 17:21:56 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-23 17:21:56 [WARN]: Invalid password {"email":"kkjj52123@gmail.com"}
+2025-04-23 17:22:07 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-23 17:22:07 [INFO]: Password is valid {"email":"kkjj52123@gmail.com"}
+2025-04-23 17:22:07 [DEBUG]: Updated JWT token {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-23 17:22:07 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-23 17:22:09 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-23 17:22:19 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-23 17:25:41 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-23 17:25:56 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-23 17:25:56 [DEBUG]: User details {"email":"kkjj52123@gmail.com","twoFactorEnabled":false,"twoFactorSecret":"not set"}
+2025-04-23 17:25:56 [WARN]: Invalid password {"email":"kkjj52123@gmail.com"}
+2025-04-23 17:26:08 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-23 17:26:08 [DEBUG]: User details {"email":"kkjj52123@gmail.com","twoFactorEnabled":false,"twoFactorSecret":"not set"}
+2025-04-23 17:26:08 [INFO]: Password is valid {"email":"kkjj52123@gmail.com"}
+2025-04-23 17:26:08 [INFO]: 2FA not enabled for user {"email":"kkjj52123@gmail.com"}
+2025-04-23 17:26:08 [DEBUG]: Updated JWT token {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-23 17:26:08 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-23 17:26:10 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-23 17:26:54 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-23 17:30:00 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-23 17:30:28 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-23 17:30:29 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-23 17:30:31 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-23 17:30:32 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-23 17:30:46 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-23 17:30:53 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-23 17:30:53 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-23 17:31:06 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-23 17:31:28 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-23 17:31:28 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-23 17:31:46 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-23 17:31:46 [DEBUG]: User details {"email":"kkjj52123@gmail.com","twoFactorEnabled":true,"twoFactorSecret":"set"}
+2025-04-23 17:31:46 [INFO]: Password is valid {"email":"kkjj52123@gmail.com"}
+2025-04-23 17:31:46 [INFO]: 2FA is enabled {"email":"kkjj52123@gmail.com"}
+2025-04-23 17:31:46 [DEBUG]: Verifying 2FA code {"email":"kkjj52123@gmail.com","providedCode":"undefined"}
+2025-04-23 17:31:46 [DEBUG]: Generated 2FA code {"email":"kkjj52123@gmail.com","generatedCode":"003484"}
+2025-04-23 17:31:46 [DEBUG]: 2FA validation result {"email":"kkjj52123@gmail.com","isValid":false}
+2025-04-23 17:31:46 [WARN]: Invalid 2FA code {"email":"kkjj52123@gmail.com"}
+2025-04-23 17:37:40 [INFO]: Checked 2FA status {"email":"kkjj52123@gmail.com","twoFactorEnabled":true}
+2025-04-23 17:39:56 [INFO]: Checked 2FA status {"email":"kkjj52123@gmail.com","twoFactorEnabled":true}
+2025-04-23 17:40:31 [WARN]: User not found in check-2fa {"email":"k"}
+2025-04-23 17:40:32 [WARN]: User not found in check-2fa {"email":"kk"}
+2025-04-23 17:40:33 [WARN]: User not found in check-2fa {"email":"kkj"}
+2025-04-23 17:40:33 [WARN]: User not found in check-2fa {"email":"kkjj"}
+2025-04-23 17:40:33 [WARN]: User not found in check-2fa {"email":"kkjj5"}
+2025-04-23 17:40:34 [WARN]: User not found in check-2fa {"email":"kkjj52"}
+2025-04-23 17:40:34 [WARN]: User not found in check-2fa {"email":"kkjj521"}
+2025-04-23 17:40:35 [WARN]: User not found in check-2fa {"email":"kkjj5212"}
+2025-04-23 17:40:36 [WARN]: User not found in check-2fa {"email":"kkjj52123"}
+2025-04-23 17:40:37 [WARN]: User not found in check-2fa {"email":"kkjj52123@"}
+2025-04-23 17:40:38 [WARN]: User not found in check-2fa {"email":"kkjj52123@g"}
+2025-04-23 17:40:39 [WARN]: User not found in check-2fa {"email":"kkjj52123@gm"}
+2025-04-23 17:40:39 [WARN]: User not found in check-2fa {"email":"kkjj52123@gma"}
+2025-04-23 17:40:40 [WARN]: User not found in check-2fa {"email":"kkjj52123@gmai"}
+2025-04-23 17:40:40 [WARN]: User not found in check-2fa {"email":"kkjj52123@gmail"}
+2025-04-23 17:40:41 [WARN]: User not found in check-2fa {"email":"kkjj52123@gmail."}
+2025-04-23 17:40:41 [WARN]: User not found in check-2fa {"email":"kkjj52123@gmail.c"}
+2025-04-23 17:40:41 [WARN]: User not found in check-2fa {"email":"kkjj52123@gmail.co"}
+2025-04-23 17:40:41 [INFO]: Checked 2FA status {"email":"kkjj52123@gmail.com","twoFactorEnabled":true}
+2025-04-23 17:41:01 [WARN]: User not found in check-2fa {"email":"s"}
+2025-04-23 17:41:02 [WARN]: User not found in check-2fa {"email":"sr"}
+2025-04-23 17:41:02 [WARN]: User not found in check-2fa {"email":"sri"}
+2025-04-23 17:41:03 [WARN]: User not found in check-2fa {"email":"sric"}
+2025-04-23 17:41:04 [WARN]: User not found in check-2fa {"email":"srich"}
+2025-04-23 17:41:04 [WARN]: User not found in check-2fa {"email":"srichn"}
+2025-04-23 17:41:08 [WARN]: User not found in check-2fa {"email":"srich"}
+2025-04-23 17:41:09 [WARN]: User not found in check-2fa {"email":"sricha"}
+2025-04-23 17:41:10 [WARN]: User not found in check-2fa {"email":"srichan"}
+2025-04-23 17:41:10 [WARN]: User not found in check-2fa {"email":"srichand"}
+2025-04-23 17:41:11 [WARN]: User not found in check-2fa {"email":"srichandan"}
+2025-04-23 17:41:11 [WARN]: User not found in check-2fa {"email":"srichanda"}
+2025-04-23 17:41:13 [WARN]: User not found in check-2fa {"email":"srichandanmohapatra408@gmail.com"}
+2025-04-23 17:41:24 [WARN]: User not found in check-2fa {"email":"k"}
+2025-04-23 17:41:25 [WARN]: User not found in check-2fa {"email":"kk"}
+2025-04-23 17:41:25 [WARN]: User not found in check-2fa {"email":"kkj"}
+2025-04-23 17:41:25 [WARN]: User not found in check-2fa {"email":"kkjj"}
+2025-04-23 17:41:25 [WARN]: User not found in check-2fa {"email":"kkjj5"}
+2025-04-23 17:41:26 [WARN]: User not found in check-2fa {"email":"kkjj52"}
+2025-04-23 17:41:27 [WARN]: User not found in check-2fa {"email":"kkjj521"}
+2025-04-23 17:41:27 [WARN]: User not found in check-2fa {"email":"kkjj5212"}
+2025-04-23 17:41:27 [WARN]: User not found in check-2fa {"email":"kkjj52123"}
+2025-04-23 17:41:28 [WARN]: User not found in check-2fa {"email":"kkjj52123@"}
+2025-04-23 17:41:29 [WARN]: User not found in check-2fa {"email":"kkjj52123@g"}
+2025-04-23 17:41:30 [WARN]: User not found in check-2fa {"email":"kkjj52123@gm"}
+2025-04-23 17:41:31 [WARN]: User not found in check-2fa {"email":"kkjj52123@gma"}
+2025-04-23 17:41:31 [WARN]: User not found in check-2fa {"email":"kkjj52123@gmai"}
+2025-04-23 17:41:32 [WARN]: User not found in check-2fa {"email":"kkjj52123@gmail"}
+2025-04-23 17:41:32 [WARN]: User not found in check-2fa {"email":"kkjj52123@gmail."}
+2025-04-23 17:41:33 [WARN]: User not found in check-2fa {"email":"kkjj52123@gmail.c"}
+2025-04-23 17:41:33 [INFO]: Checked 2FA status {"email":"kkjj52123@gmail.com","twoFactorEnabled":true}
+2025-04-23 17:41:33 [WARN]: User not found in check-2fa {"email":"kkjj52123@gmail.co"}
+2025-04-23 17:41:44 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-23 17:41:44 [DEBUG]: User details {"email":"kkjj52123@gmail.com","twoFactorEnabled":true,"twoFactorSecret":"set"}
+2025-04-23 17:41:44 [INFO]: Password is valid {"email":"kkjj52123@gmail.com"}
+2025-04-23 17:41:44 [INFO]: 2FA is enabled {"email":"kkjj52123@gmail.com"}
+2025-04-23 17:41:44 [DEBUG]: Verifying 2FA code {"email":"kkjj52123@gmail.com","providedCode":"undefined"}
+2025-04-23 17:41:44 [DEBUG]: Generated 2FA code {"email":"kkjj52123@gmail.com","generatedCode":"910708"}
+2025-04-23 17:41:44 [DEBUG]: 2FA validation result {"email":"kkjj52123@gmail.com","isValid":false}
+2025-04-23 17:41:44 [WARN]: Invalid 2FA code {"email":"kkjj52123@gmail.com"}
+2025-04-23 17:41:53 [INFO]: Checked 2FA status {"email":"kkjj52123@gmail.com","twoFactorEnabled":true}
+2025-04-23 17:42:21 [INFO]: Checked 2FA status {"email":"kkjj52123@gmail.com","twoFactorEnabled":true}
+2025-04-23 17:42:47 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-23 17:42:47 [DEBUG]: User details {"email":"kkjj52123@gmail.com","twoFactorEnabled":true,"twoFactorSecret":"set"}
+2025-04-23 17:42:47 [INFO]: Password is valid {"email":"kkjj52123@gmail.com"}
+2025-04-23 17:42:47 [INFO]: 2FA is enabled {"email":"kkjj52123@gmail.com"}
+2025-04-23 17:42:47 [DEBUG]: Verifying 2FA code {"email":"kkjj52123@gmail.com","providedCode":"257577"}
+2025-04-23 17:42:47 [DEBUG]: Generated 2FA code {"email":"kkjj52123@gmail.com","generatedCode":"257577"}
+2025-04-23 17:42:47 [DEBUG]: 2FA validation result {"email":"kkjj52123@gmail.com","isValid":true}
+2025-04-23 17:42:47 [INFO]: 2FA valid, login success {"email":"kkjj52123@gmail.com"}
+2025-04-23 17:42:47 [DEBUG]: Updated JWT token {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-23 17:42:47 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-23 17:42:49 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-23 22:04:19 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-23 22:04:27 [INFO]: Checked 2FA status {"email":"kkjj52123@gmail.com","twoFactorEnabled":true}
+2025-04-23 22:04:58 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-23 22:04:58 [DEBUG]: User details {"email":"kkjj52123@gmail.com","twoFactorEnabled":true,"twoFactorSecret":"set"}
+2025-04-23 22:04:58 [INFO]: Password is valid {"email":"kkjj52123@gmail.com"}
+2025-04-23 22:04:58 [INFO]: 2FA is enabled {"email":"kkjj52123@gmail.com"}
+2025-04-23 22:04:58 [DEBUG]: Verifying 2FA code {"email":"kkjj52123@gmail.com","providedCode":"806184"}
+2025-04-23 22:04:58 [DEBUG]: Generated 2FA code {"email":"kkjj52123@gmail.com","generatedCode":"806184"}
+2025-04-23 22:04:58 [DEBUG]: 2FA validation result {"email":"kkjj52123@gmail.com","isValid":true}
+2025-04-23 22:04:58 [INFO]: 2FA valid, login success {"email":"kkjj52123@gmail.com"}
+2025-04-23 22:04:58 [DEBUG]: Updated JWT token {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-23 22:04:59 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-23 22:05:00 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-23 22:05:47 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-23 22:05:48 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-23 22:05:55 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-23 22:05:56 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}

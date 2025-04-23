@@ -1,37 +1,44 @@
-import { NextResponse } from "next/server";
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
 import bcrypt from "bcrypt";
 
-export async function POST(request: Request) {
-  try {
-    const { email, password, name } = await request.json();
+export async function POST(request: NextRequest) {
+  const { email, password, name, username } = await request.json();
 
-    if (!email || !password) {
-      return NextResponse.json(
-        { error: "Email and password are required" },
-        { status: 400 }
-      );
-    }
-
-    const hashedPassword = await bcrypt.hash(password, 10);
-
-    const user = await prisma.user.create({
-      data: {
-        email,
-        password: hashedPassword,
-        name,
-      },
-    });
-
+  if (!email || !password) {
     return NextResponse.json(
-      { message: "User created", userId: user.id },
-      { status: 201 }
-    );
-  } catch (error) {
-    console.error(error);
-    return NextResponse.json(
-      { error: "Email already exists or invalid data" },
+      { message: "Email and password are required" },
       { status: 400 }
     );
   }
+
+  // Check if user already exists
+  const existingUser = await prisma.user.findUnique({
+    where: { email },
+  });
+
+  if (existingUser) {
+    return NextResponse.json(
+      { message: "Email already in use" },
+      { status: 400 }
+    );
+  }
+
+  // Hash the password
+  const hashedPassword = await bcrypt.hash(password, 10);
+
+  // Create the user
+  const user = await prisma.user.create({
+    data: {
+      email,
+      password: hashedPassword,
+      name,
+    },
+  });
+
+  return NextResponse.json(
+    { message: "User created successfully", user },
+    { status: 201 }
+  );
 }
