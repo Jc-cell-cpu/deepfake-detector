@@ -15,20 +15,31 @@ export async function POST(request: NextRequest) {
   const user = await prisma.user.findUnique({
     where: { email: session.user.email },
   });
-  if (!user)
+  if (!user) {
     return NextResponse.json({ message: "User not found" }, { status: 404 });
+  }
 
-  // Generate new secret
+  const body = await request.json();
+  const { action } = body; // "enable" or "disable"
+
+  if (action === "disable") {
+    // Disable 2FA
+    await prisma.user.update({
+      where: { id: user.id },
+      data: { twoFactorEnabled: false, twoFactorSecret: null },
+    });
+    return NextResponse.json({ message: "Two-factor authentication disabled" });
+  }
+
+  // Enable 2FA (existing logic)
   const secret = authenticator.generateSecret();
   console.log("Generated 2FA secret for user:", secret);
 
-  // Save it in DB
-  const updatedUser = await prisma.user.update({
+  await prisma.user.update({
     where: { id: user.id },
     data: { twoFactorSecret: secret, twoFactorEnabled: true },
   });
 
-  // Create QR Code
   const otpAuthUrl = authenticator.keyuri(user.email, "DefakeZone", secret);
   console.log("OTPAuth URL:", otpAuthUrl);
   const qrCode = await QRCode.toDataURL(otpAuthUrl);

@@ -5,7 +5,6 @@
 
 import type React from "react"
 import { useSession } from "next-auth/react"
-import type { Session } from "next-auth"
 import { useState, useRef, useEffect } from "react"
 import { motion } from "framer-motion"
 import { User, AtSign, Lock, Shield, Save, AlertCircle, CheckCircle, Camera, X } from "lucide-react"
@@ -112,17 +111,27 @@ export default function ProfilePage() {
         }
     }
 
-    const handle2FA = async () => {
+    const handle2FA = async (action: "enable" | "disable") => {
         setError(null)
+        setSuccess(null)
         try {
             const res = await fetch("/api/2fa", {
                 method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ action }),
             })
             const data = await res.json()
             if (res.ok) {
-                setQrCode(data.qrCode)
+                if (action === "enable") {
+                    setQrCode(data.qrCode)
+                } else {
+                    setTwoFactorEnabled(false)
+                    setSuccess("Two-factor authentication disabled successfully")
+                    await updateSession()
+                    router.refresh()
+                }
             } else {
-                setError(data.message || "2FA setup failed")
+                setError(data.message || `${action === "enable" ? "2FA setup" : "2FA disable"} failed`)
             }
         } catch (err) {
             setError("An unexpected error occurred")
@@ -467,12 +476,15 @@ export default function ProfilePage() {
                                                         <div className="flex items-center space-x-2">
                                                             <Switch
                                                                 checked={twoFactorEnabled}
-                                                                onCheckedChange={() => {
-                                                                    if (!twoFactorEnabled) {
-                                                                        handle2FA()
+                                                                onCheckedChange={(checked) => {
+                                                                    if (checked) {
+                                                                        handle2FA("enable")
+                                                                    } else {
+                                                                        if (confirm("Are you sure you want to disable two-factor authentication? This will reduce your account's security.")) {
+                                                                            handle2FA("disable")
+                                                                        }
                                                                     }
                                                                 }}
-                                                                disabled={twoFactorEnabled}
                                                             />
                                                             <span className={twoFactorEnabled ? "text-green-400" : "text-slate-400"}>
                                                                 {twoFactorEnabled ? "Enabled" : "Disabled"}
