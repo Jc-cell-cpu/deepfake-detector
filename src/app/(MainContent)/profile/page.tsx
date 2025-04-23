@@ -17,13 +17,16 @@ import { Label } from "@/components/ui/label"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog"
 
 export default function ProfilePage() {
     const { data: session, update: updateSession } = useSession()
     const router = useRouter()
     const [name, setName] = useState(session?.user?.name || "")
     const [username, setUsername] = useState(session?.user?.username || "")
-    const [password, setPassword] = useState("")
+    const [oldPassword, setOldPassword] = useState("")
+    const [newPassword, setNewPassword] = useState("")
+    const [confirmPassword, setConfirmPassword] = useState("")
     const [image, setImage] = useState<File | null>(null)
     const [imagePreview, setImagePreview] = useState<string | null>(session?.user?.image || null)
     const [twoFactorEnabled, setTwoFactorEnabled] = useState(session?.user?.twoFactorEnabled || false)
@@ -32,6 +35,7 @@ export default function ProfilePage() {
     const [error, setError] = useState<string | null>(null)
     const [success, setSuccess] = useState<string | null>(null)
     const [isSubmitting, setIsSubmitting] = useState(false)
+    const [isConfirmDialogOpen, setIsConfirmDialogOpen] = useState(false)
     const fileInputRef = useRef<HTMLInputElement>(null)
 
     // Fetch latest user data on mount
@@ -87,7 +91,9 @@ export default function ProfilePage() {
             const formData = new FormData()
             formData.append("name", name)
             if (username) formData.append("username", username)
-            if (password) formData.append("password", password)
+            if (oldPassword) formData.append("oldPassword", oldPassword)
+            if (newPassword) formData.append("newPassword", newPassword)
+            if (confirmPassword) formData.append("confirmPassword", confirmPassword)
             if (image) formData.append("image", image)
 
             const res = await fetch("/api/profile", {
@@ -98,6 +104,10 @@ export default function ProfilePage() {
             if (res.ok) {
                 const data = await res.json()
                 setSuccess("Profile updated successfully")
+                // Clear password fields on success
+                setOldPassword("")
+                setNewPassword("")
+                setConfirmPassword("")
                 await updateSession()
                 router.refresh()
             } else {
@@ -167,6 +177,11 @@ export default function ProfilePage() {
         } finally {
             setIsSubmitting(false)
         }
+    }
+
+    const handleDisable2FA = () => {
+        setIsConfirmDialogOpen(false)
+        handle2FA("disable")
     }
 
     if (!session) {
@@ -424,30 +439,72 @@ export default function ProfilePage() {
                                                 <CardDescription>Update your password to keep your account secure</CardDescription>
                                             </CardHeader>
                                             <CardContent>
-                                                <div className="space-y-2">
-                                                    <Label htmlFor="password" className="text-sm font-medium text-slate-300">
-                                                        New Password
-                                                    </Label>
-                                                    <div className="relative">
-                                                        <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-slate-400">
-                                                            <Lock size={18} />
+                                                <div className="space-y-4">
+                                                    <div className="space-y-2">
+                                                        <Label htmlFor="oldPassword" className="text-sm font-medium text-slate-300">
+                                                            Old Password
+                                                        </Label>
+                                                        <div className="relative">
+                                                            <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-slate-400">
+                                                                <Lock size={18} />
+                                                            </div>
+                                                            <Input
+                                                                id="oldPassword"
+                                                                type="password"
+                                                                value={oldPassword}
+                                                                onChange={(e) => setOldPassword(e.target.value)}
+                                                                placeholder="Enter your current password"
+                                                                className="pl-10 bg-slate-900/50 border-slate-700 text-white focus:ring-purple-500 focus:border-purple-500"
+                                                            />
                                                         </div>
-                                                        <Input
-                                                            id="password"
-                                                            type="password"
-                                                            value={password}
-                                                            onChange={(e) => setPassword(e.target.value)}
-                                                            placeholder="Enter new password"
-                                                            className="pl-10 bg-slate-900/50 border-slate-700 text-white focus:ring-purple-500 focus:border-purple-500"
-                                                        />
                                                     </div>
-                                                    <p className="text-xs text-slate-400">Leave blank to keep your current password</p>
+                                                    <div className="space-y-2">
+                                                        <Label htmlFor="newPassword" className="text-sm font-medium text-slate-300">
+                                                            New Password
+                                                        </Label>
+                                                        <div className="relative">
+                                                            <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-slate-400">
+                                                                <Lock size={18} />
+                                                            </div>
+                                                            <Input
+                                                                id="newPassword"
+                                                                type="password"
+                                                                value={newPassword}
+                                                                onChange={(e) => setNewPassword(e.target.value)}
+                                                                placeholder="Enter new password"
+                                                                className="pl-10 bg-slate-900/50 border-slate-700 text-white focus:ring-purple-500 focus:border-purple-500"
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                    <div className="space-y-2">
+                                                        <Label htmlFor="confirmPassword" className="text-sm font-medium text-slate-300">
+                                                            Confirm New Password
+                                                        </Label>
+                                                        <div className="relative">
+                                                            <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-slate-400">
+                                                                <Lock size={18} />
+                                                            </div>
+                                                            <Input
+                                                                id="confirmPassword"
+                                                                type="password"
+                                                                value={confirmPassword}
+                                                                onChange={(e) => setConfirmPassword(e.target.value)}
+                                                                placeholder="Confirm new password"
+                                                                className="pl-10 bg-slate-900/50 border-slate-700 text-white focus:ring-purple-500 focus:border-purple-500"
+                                                            />
+                                                        </div>
+                                                        <p className="text-xs text-slate-400">Ensure your new password matches the confirmation</p>
+                                                    </div>
                                                 </div>
                                             </CardContent>
                                             <CardFooter>
                                                 <Button
                                                     onClick={handleSubmit}
-                                                    disabled={!password || isSubmitting}
+                                                    disabled={
+                                                        isSubmitting ||
+                                                        !!((oldPassword || newPassword || confirmPassword) &&
+                                                            !(oldPassword && newPassword && confirmPassword))
+                                                    }
                                                     className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-lg font-medium shadow-lg shadow-purple-900/30"
                                                 >
                                                     Update Password
@@ -480,9 +537,7 @@ export default function ProfilePage() {
                                                                     if (checked) {
                                                                         handle2FA("enable")
                                                                     } else {
-                                                                        if (confirm("Are you sure you want to disable two-factor authentication? This will reduce your account's security.")) {
-                                                                            handle2FA("disable")
-                                                                        }
+                                                                        setIsConfirmDialogOpen(true)
                                                                     }
                                                                 }}
                                                             />
@@ -555,6 +610,33 @@ export default function ProfilePage() {
                     </div>
                 </div>
             </main>
+
+            {/* Confirmation Dialog for Disabling 2FA using Shadcn UI */}
+            <Dialog open={isConfirmDialogOpen} onOpenChange={setIsConfirmDialogOpen}>
+                <DialogContent className="bg-slate-800 border-slate-700 text-white">
+                    <DialogHeader>
+                        <DialogTitle>Disable Two-Factor Authentication</DialogTitle>
+                        <DialogDescription className="text-slate-400">
+                            Are you sure you want to disable two-factor authentication? This will reduce your account&apos;s security.
+                        </DialogDescription>
+                    </DialogHeader>
+                    <DialogFooter>
+                        <Button
+                            variant="default"
+                            onClick={() => setIsConfirmDialogOpen(false)}
+                            className="border-slate-600 text-white hover:bg-slate-700"
+                        >
+                            Cancel
+                        </Button>
+                        <Button
+                            onClick={handleDisable2FA}
+                            className="bg-red-600 hover:bg-red-700 text-white"
+                        >
+                            Disable 2FA
+                        </Button>
+                    </DialogFooter>
+                </DialogContent>
+            </Dialog>
         </div>
     )
 }
