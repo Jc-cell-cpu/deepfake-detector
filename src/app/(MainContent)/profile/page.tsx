@@ -1,13 +1,14 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client"
 
 import type React from "react"
-import { useSession } from "next-auth/react"
+import { useSession, signOut } from "next-auth/react"
 import { useState, useRef, useEffect } from "react"
 import { motion } from "framer-motion"
-import { User, AtSign, Lock, Shield, Save, AlertCircle, CheckCircle, Camera, X } from "lucide-react"
+import { User, AtSign, Lock, Shield, Save, AlertCircle, CheckCircle, Camera, X, Trash2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
@@ -36,6 +37,7 @@ export default function ProfilePage() {
     const [success, setSuccess] = useState<string | null>(null)
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [isConfirmDialogOpen, setIsConfirmDialogOpen] = useState(false)
+    const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false) // New state for delete confirmation
     const fileInputRef = useRef<HTMLInputElement>(null)
 
     // Fetch latest user data on mount
@@ -182,6 +184,33 @@ export default function ProfilePage() {
     const handleDisable2FA = () => {
         setIsConfirmDialogOpen(false)
         handle2FA("disable")
+    }
+
+    const handleDeleteAccount = async () => {
+        setIsDeleteDialogOpen(false)
+        setIsSubmitting(true)
+        setError(null)
+        setSuccess(null)
+
+        try {
+            const res = await fetch("/api/profile", {
+                method: "DELETE",
+            })
+
+            if (res.ok) {
+                setSuccess("Account deleted successfully")
+                // Sign out the user and redirect to login page
+                await signOut({ redirect: false })
+                router.push("/login")
+            } else {
+                const data = await res.json()
+                setError(data.message || "Failed to delete account")
+            }
+        } catch (err) {
+            setError("An unexpected error occurred")
+        } finally {
+            setIsSubmitting(false)
+        }
     }
 
     if (!session) {
@@ -604,6 +633,39 @@ export default function ProfilePage() {
                                             </CardContent>
                                         </Card>
                                     </motion.div>
+
+                                    {/* Delete Account Section */}
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: 0.3, duration: 0.5 }}
+                                    >
+                                        <Card className="bg-slate-800/50 backdrop-blur-md border-slate-700/50 shadow-xl">
+                                            <CardHeader>
+                                                <CardTitle className="text-white">Delete Account</CardTitle>
+                                                <CardDescription>Permanently deactivate your account. This action cannot be undone.</CardDescription>
+                                            </CardHeader>
+                                            <CardContent>
+                                                <div className="bg-red-500/20 border border-red-500/30 rounded-lg p-4 text-center">
+                                                    <AlertCircle className="h-8 w-8 text-red-400 mx-auto mb-2" />
+                                                    <h3 className="text-lg text-white font-medium mb-1">Warning</h3>
+                                                    <p className="text-sm text-slate-300">
+                                                        Deactivating your account will prevent you from logging in. Your data will remain in our system but marked as inactive.
+                                                    </p>
+                                                </div>
+                                            </CardContent>
+                                            <CardFooter>
+                                                <Button
+                                                    onClick={() => setIsDeleteDialogOpen(true)}
+                                                    disabled={isSubmitting}
+                                                    className="w-full bg-red-600 hover:bg-red-700 text-white rounded-lg font-medium shadow-lg shadow-red-900/30"
+                                                >
+                                                    <Trash2 className="mr-2 h-5 w-5" />
+                                                    Delete Account
+                                                </Button>
+                                            </CardFooter>
+                                        </Card>
+                                    </motion.div>
                                 </div>
                             </TabsContent>
                         </Tabs>
@@ -611,13 +673,13 @@ export default function ProfilePage() {
                 </div>
             </main>
 
-            {/* Confirmation Dialog for Disabling 2FA using Shadcn UI */}
+            {/* Confirmation Dialog for Disabling 2FA */}
             <Dialog open={isConfirmDialogOpen} onOpenChange={setIsConfirmDialogOpen}>
                 <DialogContent className="bg-slate-800 border-slate-700 text-white">
                     <DialogHeader>
                         <DialogTitle>Disable Two-Factor Authentication</DialogTitle>
                         <DialogDescription className="text-slate-400">
-                            Are you sure you want to disable two-factor authentication? This will reduce your account&apos;s security.
+                            Are you sure you want to disable two-factor authentication? This will reduce your account's security.
                         </DialogDescription>
                     </DialogHeader>
                     <DialogFooter>
@@ -633,6 +695,33 @@ export default function ProfilePage() {
                             className="bg-red-600 hover:bg-red-700 text-white"
                         >
                             Disable 2FA
+                        </Button>
+                    </DialogFooter>
+                </DialogContent>
+            </Dialog>
+
+            {/* Confirmation Dialog for Deleting Account */}
+            <Dialog open={isDeleteDialogOpen} onOpenChange={setIsDeleteDialogOpen}>
+                <DialogContent className="bg-slate-800 border-slate-700 text-white">
+                    <DialogHeader>
+                        <DialogTitle>Delete Account</DialogTitle>
+                        <DialogDescription className="text-slate-400">
+                            Are you sure you want to delete your account? This action will deactivate your account, and you will no longer be able to log in. Your data will remain in our system but marked as inactive.
+                        </DialogDescription>
+                    </DialogHeader>
+                    <DialogFooter>
+                        <Button
+                            variant="default"
+                            onClick={() => setIsDeleteDialogOpen(false)}
+                            className="border-slate-600 text-white hover:bg-slate-700"
+                        >
+                            Cancel
+                        </Button>
+                        <Button
+                            onClick={handleDeleteAccount}
+                            className="bg-red-600 hover:bg-red-700 text-white"
+                        >
+                            Delete Account
                         </Button>
                     </DialogFooter>
                 </DialogContent>

@@ -1,13 +1,11 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import { PrismaClient } from "@prisma/client";
 import bcrypt from "bcrypt";
 import { NextAuthOptions } from "next-auth";
 import { authenticator } from "otplib";
 import logger from "@/lib/logger";
-
-const prisma = new PrismaClient();
+import prisma from "@/lib/prisma"; // Ensure prisma is imported
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -38,6 +36,12 @@ export const authOptions: NextAuthOptions = {
         if (!user) {
           logger.warn("User not found", { email: credentials.email });
           throw new Error("USER_NOT_FOUND");
+        }
+
+        // Check if the account is active
+        if (!user.isActive) {
+          logger.warn("User account is inactive", { email: credentials.email });
+          throw new Error("ACCOUNT_INACTIVE");
         }
 
         logger.debug("User details", {
@@ -103,6 +107,11 @@ export const authOptions: NextAuthOptions = {
           id: user.id.toString(),
           email: user.email,
           name: user.name,
+          image: user.image,
+          username: user.username,
+          twoFactorEnabled: user.twoFactorEnabled,
+          twoFactorSecret: user.twoFactorSecret,
+          isActive: user.isActive,
         };
       },
     }),
@@ -113,6 +122,10 @@ export const authOptions: NextAuthOptions = {
         token.id = user.id;
         token.email = user.email;
         token.image = user.image;
+        token.username = user.username;
+        token.twoFactorEnabled = user.twoFactorEnabled;
+        token.twoFactorSecret = user.twoFactorSecret;
+        token.isActive = user.isActive;
         logger.debug("Updated JWT token", {
           userId: user.id,
           email: user.email,
@@ -125,6 +138,10 @@ export const authOptions: NextAuthOptions = {
         session.user.id = token.id as string;
         session.user.email = token.email as string;
         session.user.image = token.image as string;
+        session.user.username = token.username;
+        session.user.twoFactorEnabled = token.twoFactorEnabled;
+        session.user.twoFactorSecret = token.twoFactorSecret;
+        session.user.isActive = token.isActive;
         logger.debug("Updated session", {
           userId: token.id,
           email: token.email,
@@ -193,7 +210,7 @@ export const authOptions: NextAuthOptions = {
  *                   type: string
  *                   example: MISSING_CREDENTIALS
  *       401:
- *         description: Invalid credentials or user not found
+ *         description: Invalid credentials, user not found, or account inactive
  *         content:
  *           application/json:
  *             schema:

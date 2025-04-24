@@ -12,7 +12,7 @@ import logger from "@/lib/logger";
  * /api/profile:
  *   get:
  *     summary: Retrieve the authenticated user's profile
- *     description: Fetches the profile details of the authenticated user based on their session email.
+ *     description: Fetches the profile details of the authenticated user based on their session email. Only active users are returned.
  *     tags: [User Profile]
  *     security:
  *       - BasicAuth: []
@@ -49,7 +49,7 @@ import logger from "@/lib/logger";
  *                   type: string
  *                   example: "Unauthorized"
  *       404:
- *         description: User not found
+ *         description: User not found or account is inactive
  *         content:
  *           application/json:
  *             schema:
@@ -138,7 +138,7 @@ import logger from "@/lib/logger";
  *                   type: string
  *                   example: "Unauthorized"
  *       404:
- *         description: User not found
+ *         description: User not found or account is inactive
  *         content:
  *           application/json:
  *             schema:
@@ -157,6 +157,53 @@ import logger from "@/lib/logger";
  *                 message:
  *                   type: string
  *                   example: "Update failed"
+ *   delete:
+ *     summary: Soft delete the authenticated user's account
+ *     description: Marks the authenticated user's account as inactive (soft delete). The user will no longer be able to log in, but their data will remain in the database.
+ *     tags: [User Profile]
+ *     security:
+ *       - BasicAuth: []
+ *     responses:
+ *       200:
+ *         description: Account soft deleted successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: "Account deleted successfully"
+ *       401:
+ *         description: Unauthorized access
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: "Unauthorized"
+ *       404:
+ *         description: User not found
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: "User not found"
+ *       500:
+ *         description: Internal server error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: "Failed to delete account"
  */
 export async function GET(request: NextRequest) {
   const session = await getServerSession(authOptions);
@@ -170,7 +217,9 @@ export async function GET(request: NextRequest) {
   logger.debug("Looking up user", { email: session.user.email });
 
   const user = await prisma.user.findUnique({
-    where: { email: session.user.email },
+    where: {
+      email: session.user.email,
+    },
     select: {
       id: true,
       email: true,
@@ -178,11 +227,14 @@ export async function GET(request: NextRequest) {
       image: true,
       username: true,
       twoFactorEnabled: true,
+      isActive: true, // Include isActive in the select to check it manually
     },
   });
 
-  if (!user) {
-    logger.warn("User not found", { email: session.user.email });
+  if (!user || !user.isActive) {
+    logger.warn("User not found or account is inactive", {
+      email: session.user.email,
+    });
     return NextResponse.json({ message: "User not found" }, { status: 404 });
   }
 
@@ -202,9 +254,16 @@ export async function POST(request: NextRequest) {
   }
 
   const user = await prisma.user.findUnique({
-    where: { email: session.user.email },
+    where: {
+      email: session.user.email,
+    },
+    select: {
+      id: true,
+      password: true,
+      isActive: true, // Include isActive to check it manually
+    },
   });
-  if (!user) {
+  if (!user || !user.isActive) {
     logger.warn("User not found for profile update", {
       email: session.user.email,
     });
@@ -317,5 +376,59 @@ export async function POST(request: NextRequest) {
       error: error instanceof Error ? error.message : String(error),
     });
     return NextResponse.json({ message: "Update failed" }, { status: 500 });
+  }
+}
+
+export async function DELETE(request: NextRequest) {
+  const session = await getServerSession(authOptions);
+  logger.info("Attempting to soft delete user account", {
+    userEmail: session?.user?.email,
+  });
+
+  if (!session?.user?.email) {
+    logger.warn("Unauthorized access attempt to delete account");
+    return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
+  }
+
+  const user = await prisma.user.findUnique({
+    where: {
+      email: session.user.email,
+    },
+    select: {
+      id: true,
+      isActive: true, // Include isActive to check it manually
+    },
+  });
+  if (!user || !user.isActive) {
+    logger.warn("User not found for account deletion", {
+      email: session.user.email,
+    });
+    return NextResponse.json({ message: "User not found" }, { status: 404 });
+  }
+
+  try {
+    logger.debug("Soft deleting user account", { userId: user.id });
+    await prisma.user.update({
+      where: { id: user.id },
+      data: {
+        isActive: false,
+        updatedAt: new Date(), // Update timestamp
+      },
+    });
+
+    logger.info("User account soft deleted successfully", { userId: user.id });
+    return NextResponse.json(
+      { message: "Account deleted successfully" },
+      { status: 200 }
+    );
+  } catch (error) {
+    logger.error("Error soft deleting account", {
+      userId: user?.id,
+      error: error instanceof Error ? error.message : String(error),
+    });
+    return NextResponse.json(
+      { message: "Failed to delete account" },
+      { status: 500 }
+    );
   }
 }

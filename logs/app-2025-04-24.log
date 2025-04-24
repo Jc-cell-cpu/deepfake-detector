@@ -144,3 +144,58 @@
 2025-04-24 13:43:57 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
 2025-04-24 13:43:57 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
 2025-04-24 13:43:57 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-24 15:42:38 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 16:27:19 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 16:35:41 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 16:43:59 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 16:43:59 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-24 16:43:59 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-24 16:48:58 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 16:49:15 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 16:49:39 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 16:57:49 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 16:57:49 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 16:57:52 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 16:58:11 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 16:58:28 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 17:18:19 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 17:18:32 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 17:18:32 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-24 17:18:32 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-24 17:18:32 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-24 17:18:32 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 17:18:32 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-24 17:18:32 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-24 17:18:32 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-24 17:18:48 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 17:18:58 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 17:18:58 [INFO]: Attempting to soft delete user account {"userEmail":"kkjj52123@gmail.com"}
+2025-04-24 17:18:58 [DEBUG]: Soft deleting user account {"userId":1}
+2025-04-24 17:18:58 [INFO]: User account soft deleted successfully {"userId":1}
+2025-04-24 17:19:28 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-24 17:19:28 [WARN]: User account is inactive {"email":"kkjj52123@gmail.com"}
+2025-04-24 17:19:31 [INFO]: Checked 2FA status {"email":"kkjj52123@gmail.com","twoFactorEnabled":false}
+2025-04-24 17:19:58 [ERROR]: Error sending reactivation code {"error":"Body is unusable: Body has already been read"}
+2025-04-24 17:23:46 [INFO]: Attempting to send verification email {"email":"kkjj52123@gmail.com"}
+2025-04-24 17:23:49 [INFO]: Reactivation code sent {"email":"kkjj52123@gmail.com"}
+2025-04-24 17:24:28 [WARN]: User not found for reactivation {"email":"JC"}
+2025-04-24 17:30:05 [WARN]: Missing email for reactivation request 
+2025-04-24 17:35:12 [INFO]: Attempting to send verification email {"email":"kkjj52123@gmail.com"}
+2025-04-24 17:35:15 [INFO]: Reactivation code sent {"email":"kkjj52123@gmail.com"}
+2025-04-24 17:35:42 [INFO]: Account reactivated successfully {"email":"kkjj52123@gmail.com"}
+2025-04-24 17:35:44 [INFO]: Checked 2FA status {"email":"kkjj52123@gmail.com","twoFactorEnabled":false}
+2025-04-24 17:35:47 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-24 17:35:47 [DEBUG]: User details {"email":"kkjj52123@gmail.com","twoFactorEnabled":false,"twoFactorSecret":"not set"}
+2025-04-24 17:35:47 [INFO]: Password is valid {"email":"kkjj52123@gmail.com"}
+2025-04-24 17:35:47 [INFO]: 2FA not enabled for user {"email":"kkjj52123@gmail.com"}
+2025-04-24 17:35:47 [DEBUG]: Updated JWT token {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 17:35:48 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 17:35:49 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 17:35:49 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-24 17:35:49 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-24 17:35:49 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-24 17:35:52 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 17:35:53 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 17:35:53 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-24 17:35:53 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-24 17:35:53 [INFO]: User profile fetched successfully {"userId":1}

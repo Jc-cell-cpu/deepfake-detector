@@ -1,4 +1,3 @@
-// src/types/next-auth.d.ts
 import { DefaultSession, DefaultUser } from "next-auth";
 
 declare module "next-auth" {
@@ -9,7 +8,8 @@ declare module "next-auth" {
       username?: string | null;
       twoFactorEnabled?: boolean;
       twoFactorSecret?: string;
-      twoFactorVerified?: boolean; // <-- Add this field to session
+      twoFactorVerified?: boolean;
+      isActive?: boolean; // Add this field to session
     } & DefaultSession["user"];
   }
 
@@ -19,7 +19,8 @@ declare module "next-auth" {
     username?: string | null;
     twoFactorEnabled?: boolean;
     twoFactorSecret?: string;
-    twoFactorVerified?: boolean; // <-- Add this field to user
+    twoFactorVerified?: boolean;
+    isActive?: boolean; // Add this field to user
   }
 }
 
@@ -30,6 +31,7 @@ declare module "next-auth/jwt" {
     username?: string | null;
     twoFactorEnabled?: boolean;
     twoFactorSecret?: string;
-    twoFactorVerified?: boolean; // <-- Add this field to JWT
+    twoFactorVerified?: boolean;
+    isActive?: boolean; // Add this field to JWT
   }
 }

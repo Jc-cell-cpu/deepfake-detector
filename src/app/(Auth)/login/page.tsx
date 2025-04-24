@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client"
 
@@ -13,32 +14,31 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { debounce } from "lodash";
 
-
 export default function LoginPage() {
-    const router = useRouter()
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
-    const [twoFACode, setTwoFACode] = useState("")
-    const [show2FA, setShow2FA] = useState(false)
-    const [loading, setLoading] = useState(false)
-    const [error, setError] = useState("")
-    const [showPassword, setShowPassword] = useState(false)
-    const [formFocused, setFormFocused] = useState(false)
+    const router = useRouter();
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [twoFACode, setTwoFACode] = useState("");
+    const [show2FA, setShow2FA] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState<React.ReactNode>("");
+    const [showPassword, setShowPassword] = useState(false);
+    const [formFocused, setFormFocused] = useState(false);
     const [checking2FA, setChecking2FA] = useState(false);
 
     // For the animated background
-    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
     useEffect(() => {
         const handleMouseMove = (e: MouseEvent) => {
-            setMousePosition({ x: e.clientX, y: e.clientY })
-        }
+            setMousePosition({ x: e.clientX, y: e.clientY });
+        };
 
-        window.addEventListener("mousemove", handleMouseMove)
+        window.addEventListener("mousemove", handleMouseMove);
         return () => {
-            window.removeEventListener("mousemove", handleMouseMove)
-        }
-    }, [])
+            window.removeEventListener("mousemove", handleMouseMove);
+        };
+    }, []);
 
     // Check 2FA status when email changes
     useEffect(() => {
@@ -101,6 +101,16 @@ export default function LoginPage() {
                         break;
                     case "INVALID_2FA_CODE":
                         setError("Invalid 2FA code. Please try again.");
+                        break;
+                    case "ACCOUNT_INACTIVE":
+                        setError(
+                            <>
+                                Your account is inactive. To reactivate your account,{" "}
+                                <Link href="/reactivate-account" className="text-purple-400 hover:text-purple-300 underline">
+                                    click here
+                                </Link>.
+                            </>
+                        );
                         break;
                     default:
                         setError("An unexpected error occurred. Please try again.");
@@ -178,7 +188,6 @@ export default function LoginPage() {
                     <div
                         className={`bg-slate-800/50 backdrop-blur-md border ${formFocused ? "border-purple-500/50" : "border-slate-700/50"} rounded-2xl shadow-xl overflow-hidden transition-all duration-300`}
                     >
-                        {/* Glowing top border when form is focused */}
                         <div
                             className={`h-1 w-full bg-gradient-to-r from-purple-600 to-pink-600 transform origin-left transition-transform duration-500 ease-out ${formFocused ? "scale-x-100" : "scale-x-0"}`}
                         />
@@ -195,7 +204,7 @@ export default function LoginPage() {
                                 onFocus={() => setFormFocused(true)}
                                 onBlur={(e) => {
                                     if (!e.currentTarget.contains(e.relatedTarget as Node)) {
-                                        setFormFocused(false)
+                                        setFormFocused(false);
                                     }
                                 }}
                             >
@@ -321,7 +330,7 @@ export default function LoginPage() {
 
                             <div className="mt-8 text-center">
                                 <p className="text-slate-300">
-                                    Don&apos;t have an account?{" "}
+                                    Don't have an account?{" "}
                                     <Link href="/signup" className="text-purple-400 hover:text-purple-300 transition-colors">
                                         Sign Up
                                     </Link>
@@ -379,8 +388,7 @@ export default function LoginPage() {
                             and{" "}
                             <Link href="/privacy" className="text-purple-400 hover:text-purple-300 transition-colors">
                                 Privacy Policy
-                            </Link>
-                            .
+                            </Link>.
                         </p>
                     </div>
                 </motion.div>
@@ -397,5 +405,5 @@ export default function LoginPage() {
                 </div>
             )}
         </div>
-    )
+    );
 }
