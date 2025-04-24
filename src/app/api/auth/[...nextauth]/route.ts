@@ -139,5 +139,80 @@ export const authOptions: NextAuthOptions = {
   secret: process.env.NEXTAUTH_SECRET,
 };
 
+/**
+ * @swagger
+ * /api/auth/signin:
+ *   post:
+ *     summary: Sign in a user with email, password, and 2FA if enabled
+ *     tags: [Authentication]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - email
+ *               - password
+ *             properties:
+ *               email:
+ *                 type: string
+ *                 format: email
+ *                 example: user@example.com
+ *               password:
+ *                 type: string
+ *                 example: Password123!
+ *               twoFACode:
+ *                 type: string
+ *                 example: "123456"
+ *                 description: >
+ *                   Only required if 2FA is enabled for the user.
+ *                   Will be ignored otherwise.
+ *     responses:
+ *       200:
+ *         description: Successfully signed in
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 id:
+ *                   type: string
+ *                 email:
+ *                   type: string
+ *                 name:
+ *                   type: string
+ *       400:
+ *         description: Missing credentials
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: MISSING_CREDENTIALS
+ *       401:
+ *         description: Invalid credentials or user not found
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: INVALID_CREDENTIALS
+ *       403:
+ *         description: 2FA required or invalid 2FA code
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: 2FA_REQUIRED
+ */
+
 const handler = NextAuth(authOptions);
 export { handler as GET, handler as POST };

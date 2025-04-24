@@ -1,0 +1,146 @@
+2025-04-24 00:01:04 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 13:01:35 [INFO]: Checked 2FA status {"email":"kkjj52123@gmail.com","twoFactorEnabled":false}
+2025-04-24 13:20:57 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 13:21:02 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 13:21:02 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-24 13:21:02 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-24 13:21:02 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-24 13:21:57 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 13:22:15 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 13:22:15 [INFO]: Processing image upload {"userId":"1"}
+2025-04-24 13:22:15 [DEBUG]: Validating file {"fileName":"fake_0.jpg","fileType":"image/jpeg","fileSize":9615}
+2025-04-24 13:22:15 [DEBUG]: Checking file signature {"fileExt":"jpg","signature":"ffd8ffe0"}
+2025-04-24 13:22:15 [DEBUG]: Processing image with sharp {"fileName":"365284e9-f434-4624-b95d-b499c7220169.jpg"}
+2025-04-24 13:22:15 [DEBUG]: Saving processed image {"filePath":"D:/College_Minor_Project/deepfake-detector/public/uploads/365284e9-f434-4624-b95d-b499c7220169.jpg"}
+2025-04-24 13:22:15 [INFO]: Running inference on image {"filePath":"D:/College_Minor_Project/deepfake-detector/public/uploads/365284e9-f434-4624-b95d-b499c7220169.jpg","userId":"1"}
+2025-04-24 13:22:18 [DEBUG]: Saving image record to database {"filePath":"D:/College_Minor_Project/deepfake-detector/public/uploads/365284e9-f434-4624-b95d-b499c7220169.jpg","userId":"1"}
+2025-04-24 13:22:18 [INFO]: Image processed successfully {"imageId":1,"result":"Real","probability":0.44946497232085414,"userId":"1"}
+2025-04-24 13:22:43 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 13:22:43 [INFO]: Fetching images for user {"userId":"1"}
+2025-04-24 13:22:43 [DEBUG]: Querying images for user {"userId":1,"page":1,"limit":5,"skip":0}
+2025-04-24 13:22:43 [INFO]: Successfully fetched images {"userId":1,"total":1,"page":1,"limit":5}
+2025-04-24 13:22:44 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 13:22:44 [INFO]: Fetching images for user {"userId":"1"}
+2025-04-24 13:22:44 [DEBUG]: Querying images for user {"userId":1,"page":1,"limit":5,"skip":0}
+2025-04-24 13:22:44 [INFO]: Successfully fetched images {"userId":1,"total":1,"page":1,"limit":5}
+2025-04-24 13:24:38 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 13:24:38 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 13:24:38 [INFO]: Fetching images for user {"userId":"1"}
+2025-04-24 13:24:38 [DEBUG]: Querying images for user {"userId":1,"page":1,"limit":5,"skip":0}
+2025-04-24 13:24:38 [INFO]: Successfully fetched images {"userId":1,"total":1,"page":1,"limit":5}
+2025-04-24 13:24:39 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 13:24:39 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 13:24:40 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 13:24:40 [INFO]: Fetching images for user {"userId":"1"}
+2025-04-24 13:24:40 [DEBUG]: Querying images for user {"userId":1,"page":1,"limit":5,"skip":0}
+2025-04-24 13:24:40 [INFO]: Successfully fetched images {"userId":1,"total":1,"page":1,"limit":5}
+2025-04-24 13:24:40 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 13:24:40 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 13:24:40 [INFO]: Fetching images for user {"userId":"1"}
+2025-04-24 13:24:40 [DEBUG]: Querying images for user {"userId":1,"page":1,"limit":5,"skip":0}
+2025-04-24 13:24:40 [INFO]: Successfully fetched images {"userId":1,"total":1,"page":1,"limit":5}
+2025-04-24 13:24:41 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 13:24:41 [INFO]: Fetching images for user {"userId":"1"}
+2025-04-24 13:24:41 [DEBUG]: Querying images for user {"userId":1,"page":1,"limit":5,"skip":0}
+2025-04-24 13:24:41 [INFO]: Successfully fetched images {"userId":1,"total":1,"page":1,"limit":5}
+2025-04-24 13:28:24 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 13:28:25 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 13:28:25 [INFO]: Fetching images for user {"userId":"1"}
+2025-04-24 13:28:25 [DEBUG]: Querying images for user {"userId":1,"page":1,"limit":5,"skip":0}
+2025-04-24 13:28:25 [INFO]: Successfully fetched images {"userId":1,"total":1,"page":1,"limit":5}
+2025-04-24 13:28:31 [INFO]: Checked 2FA status {"email":"kkjj52123@gmail.com","twoFactorEnabled":false}
+2025-04-24 13:29:19 [INFO]: Processing user registration {"email":"srichandanmohapatra408@gmail.com"}
+2025-04-24 13:29:19 [DEBUG]: Checking if user exists {"email":"srichandanmohapatra408@gmail.com"}
+2025-04-24 13:29:19 [DEBUG]: Hashing password {"email":"srichandanmohapatra408@gmail.com"}
+2025-04-24 13:29:19 [DEBUG]: Creating new user {"email":"srichandanmohapatra408@gmail.com","name":"Sri"}
+2025-04-24 13:29:19 [INFO]: User created successfully {"userId":2,"email":"srichandanmohapatra408@gmail.com"}
+2025-04-24 13:29:19 [INFO]: Sending welcome email {"email":"srichandanmohapatra408@gmail.com"}
+2025-04-24 13:29:22 [INFO]: Welcome email sent successfully {"email":"srichandanmohapatra408@gmail.com"}
+2025-04-24 13:29:23 [INFO]: Checked 2FA status {"email":"kkjj52123@gmail.com","twoFactorEnabled":false}
+2025-04-24 13:29:32 [WARN]: User not found in check-2fa {"email":"kkjj52123@gmail.co"}
+2025-04-24 13:29:34 [WARN]: User not found in check-2fa {"email":"kkjj52123@gmail."}
+2025-04-24 13:29:34 [WARN]: User not found in check-2fa {"email":"kkjj52123@gmail"}
+2025-04-24 13:29:35 [WARN]: User not found in check-2fa {"email":"kkjj52123@gmai"}
+2025-04-24 13:29:35 [WARN]: User not found in check-2fa {"email":"kkjj52123@gmail.c"}
+2025-04-24 13:29:35 [WARN]: User not found in check-2fa {"email":"kkjj52123@gma"}
+2025-04-24 13:29:36 [WARN]: User not found in check-2fa {"email":"kkjj52123@gm"}
+2025-04-24 13:29:38 [WARN]: User not found in check-2fa {"email":"kkjj52123@"}
+2025-04-24 13:29:38 [WARN]: User not found in check-2fa {"email":"kkjj521"}
+2025-04-24 13:29:38 [WARN]: User not found in check-2fa {"email":"kkjj52123"}
+2025-04-24 13:29:38 [WARN]: User not found in check-2fa {"email":"kkjj52123@g"}
+2025-04-24 13:29:39 [WARN]: User not found in check-2fa {"email":"kkjj5212"}
+2025-04-24 13:29:39 [WARN]: User not found in check-2fa {"email":"kkjj52"}
+2025-04-24 13:29:40 [WARN]: User not found in check-2fa {"email":"kkjj5"}
+2025-04-24 13:29:40 [WARN]: User not found in check-2fa {"email":"kk"}
+2025-04-24 13:29:41 [WARN]: User not found in check-2fa {"email":"kkj"}
+2025-04-24 13:29:41 [WARN]: User not found in check-2fa {"email":"kkjj"}
+2025-04-24 13:29:41 [WARN]: User not found in check-2fa {"email":"k"}
+2025-04-24 13:29:41 [WARN]: User not found in check-2fa {"email":"s"}
+2025-04-24 13:29:42 [WARN]: User not found in check-2fa {"email":"sri"}
+2025-04-24 13:29:42 [WARN]: User not found in check-2fa {"email":"srich"}
+2025-04-24 13:29:43 [WARN]: User not found in check-2fa {"email":"sr"}
+2025-04-24 13:29:43 [WARN]: User not found in check-2fa {"email":"sric"}
+2025-04-24 13:29:43 [INFO]: Checked 2FA status {"email":"srichandanmohapatra408@gmail.com","twoFactorEnabled":false}
+2025-04-24 13:29:46 [INFO]: Starting authorization {"email":"srichandanmohapatra408@gmail.com"}
+2025-04-24 13:29:46 [DEBUG]: User details {"email":"srichandanmohapatra408@gmail.com","twoFactorEnabled":false,"twoFactorSecret":"not set"}
+2025-04-24 13:29:46 [INFO]: Password is valid {"email":"srichandanmohapatra408@gmail.com"}
+2025-04-24 13:29:46 [INFO]: 2FA not enabled for user {"email":"srichandanmohapatra408@gmail.com"}
+2025-04-24 13:29:46 [DEBUG]: Updated JWT token {"userId":"2","email":"srichandanmohapatra408@gmail.com"}
+2025-04-24 13:29:46 [DEBUG]: Updated session {"userId":"2","email":"srichandanmohapatra408@gmail.com"}
+2025-04-24 13:29:48 [DEBUG]: Updated session {"userId":"2","email":"srichandanmohapatra408@gmail.com"}
+2025-04-24 13:29:48 [INFO]: Fetching user profile {"userEmail":"srichandanmohapatra408@gmail.com"}
+2025-04-24 13:29:48 [DEBUG]: Looking up user {"email":"srichandanmohapatra408@gmail.com"}
+2025-04-24 13:29:48 [INFO]: User profile fetched successfully {"userId":2}
+2025-04-24 13:29:51 [DEBUG]: Updated session {"userId":"2","email":"srichandanmohapatra408@gmail.com"}
+2025-04-24 13:29:52 [DEBUG]: Updated session {"userId":"2","email":"srichandanmohapatra408@gmail.com"}
+2025-04-24 13:29:52 [INFO]: Fetching user profile {"userEmail":"srichandanmohapatra408@gmail.com"}
+2025-04-24 13:29:52 [DEBUG]: Looking up user {"email":"srichandanmohapatra408@gmail.com"}
+2025-04-24 13:29:52 [INFO]: User profile fetched successfully {"userId":2}
+2025-04-24 13:31:07 [DEBUG]: Updated session {"userId":"2","email":"srichandanmohapatra408@gmail.com"}
+2025-04-24 13:31:15 [DEBUG]: Updated session {"userId":"2","email":"srichandanmohapatra408@gmail.com"}
+2025-04-24 13:32:04 [DEBUG]: Updated session {"userId":"2","email":"srichandanmohapatra408@gmail.com"}
+2025-04-24 13:32:36 [DEBUG]: Updated session {"userId":"2","email":"srichandanmohapatra408@gmail.com"}
+2025-04-24 13:33:02 [DEBUG]: Updated session {"userId":"2","email":"srichandanmohapatra408@gmail.com"}
+2025-04-24 13:34:08 [DEBUG]: Updated session {"userId":"2","email":"srichandanmohapatra408@gmail.com"}
+2025-04-24 13:34:25 [DEBUG]: Updated session {"userId":"2","email":"srichandanmohapatra408@gmail.com"}
+2025-04-24 13:35:25 [DEBUG]: Updated session {"userId":"2","email":"srichandanmohapatra408@gmail.com"}
+2025-04-24 13:37:19 [DEBUG]: Updated session {"userId":"2","email":"srichandanmohapatra408@gmail.com"}
+2025-04-24 13:38:15 [INFO]: Processing user registration {"email":"smohaptra2000@gmail.com"}
+2025-04-24 13:38:15 [DEBUG]: Checking if user exists {"email":"smohaptra2000@gmail.com"}
+2025-04-24 13:38:15 [DEBUG]: Hashing password {"email":"smohaptra2000@gmail.com"}
+2025-04-24 13:38:15 [DEBUG]: Creating new user {"email":"smohaptra2000@gmail.com","name":"Sarah Johnson"}
+2025-04-24 13:38:15 [INFO]: User created successfully {"userId":3,"email":"smohaptra2000@gmail.com"}
+2025-04-24 13:38:15 [INFO]: Sending welcome email {"email":"smohaptra2000@gmail.com"}
+2025-04-24 13:38:18 [INFO]: Welcome email sent successfully {"email":"smohaptra2000@gmail.com"}
+2025-04-24 13:38:19 [INFO]: Checked 2FA status {"email":"kkjj52123@gmail.com","twoFactorEnabled":false}
+2025-04-24 13:41:34 [INFO]: Processing user registration {"email":"sdmohapatra2000@gmail.com"}
+2025-04-24 13:41:34 [DEBUG]: Checking if user exists {"email":"sdmohapatra2000@gmail.com"}
+2025-04-24 13:41:34 [DEBUG]: Hashing password {"email":"sdmohapatra2000@gmail.com"}
+2025-04-24 13:41:34 [DEBUG]: Creating new user {"email":"sdmohapatra2000@gmail.com","name":"Srichandan"}
+2025-04-24 13:41:34 [INFO]: User created successfully {"userId":4,"email":"sdmohapatra2000@gmail.com"}
+2025-04-24 13:41:34 [INFO]: Sending welcome email {"email":"sdmohapatra2000@gmail.com"}
+2025-04-24 13:41:36 [INFO]: Welcome email sent successfully {"email":"sdmohapatra2000@gmail.com"}
+2025-04-24 13:41:37 [INFO]: Checked 2FA status {"email":"kkjj52123@gmail.com","twoFactorEnabled":false}
+2025-04-24 13:43:33 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-24 13:43:33 [DEBUG]: User details {"email":"kkjj52123@gmail.com","twoFactorEnabled":false,"twoFactorSecret":"not set"}
+2025-04-24 13:43:33 [INFO]: Password is valid {"email":"kkjj52123@gmail.com"}
+2025-04-24 13:43:33 [INFO]: 2FA not enabled for user {"email":"kkjj52123@gmail.com"}
+2025-04-24 13:43:33 [DEBUG]: Updated JWT token {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 13:43:34 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 13:43:35 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 13:43:35 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-24 13:43:35 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-24 13:43:35 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-24 13:43:38 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 13:43:38 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 13:43:38 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-24 13:43:38 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-24 13:43:38 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-24 13:43:57 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 13:43:57 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-24 13:43:57 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-24 13:43:57 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-24 13:43:57 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 13:43:57 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-24 13:43:57 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-24 13:43:57 [INFO]: User profile fetched successfully {"userId":1}

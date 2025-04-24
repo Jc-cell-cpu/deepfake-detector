@@ -4,13 +4,81 @@ import prisma from "@/lib/prisma";
 import { Resend } from "resend";
 import crypto from "crypto";
 import { sendMail } from "@/lib/mailer";
+import logger from "@/lib/logger";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+/**
+ * @swagger
+ * /api/password-reset:
+ *   post:
+ *     summary: Request a password reset verification code
+ *     description: Generates and sends a 6-digit verification code to the user's email for password reset. The code expires in 15 minutes.
+ *     tags: [Authentication]
+ *     security:
+ *       - BasicAuth: []
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - email
+ *             properties:
+ *               email:
+ *                 type: string
+ *                 format: email
+ *                 example: user@example.com
+ *     responses:
+ *       200:
+ *         description: Verification code sent successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: "Verification code sent"
+ *       400:
+ *         description: Missing email
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: "Email is required"
+ *       404:
+ *         description: User not found
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: "Email not found"
+ *       500:
+ *         description: Failed to send verification code
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: "Failed to send verification code"
+ */
 export async function POST(request: NextRequest) {
   const { email } = await request.json();
 
+  logger.info("Processing password reset request", { email });
+
   if (!email) {
+    logger.warn("Missing email in request");
     return NextResponse.json({ message: "Email is required" }, { status: 400 });
   }
 
@@ -20,8 +88,11 @@ export async function POST(request: NextRequest) {
   });
 
   if (!user) {
+    logger.warn("User not found for password reset", { email });
     return NextResponse.json({ message: "Email not found" }, { status: 404 });
   }
+
+  logger.debug("User found, generating verification code", { email });
 
   // Generate a 6-digit verification code
   const verificationCode = crypto.randomInt(100000, 999999).toString();
@@ -41,9 +112,15 @@ export async function POST(request: NextRequest) {
     },
   });
 
+  logger.info("Verification code generated and stored", {
+    email,
+    code: verificationCode,
+    expiresAt,
+  });
+
   // Send the verification code via email
   try {
-    console.log("Sending email to:", email);
+    logger.info("Attempting to send verification email", { email });
     await sendMail(
       email,
       "Password Reset Verification Code",
@@ -118,13 +195,16 @@ export async function POST(request: NextRequest) {
         </html>
       `
     );
-    console.log("Email sent (from code)");
+    logger.info("Verification email sent successfully", { email });
     return NextResponse.json(
       { message: "Verification code sent" },
       { status: 200 }
     );
   } catch (error) {
-    console.error("Error sending email:", error);
+    logger.error("Failed to send verification email", {
+      email,
+      error: error instanceof Error ? error.message : String(error),
+    });
     return NextResponse.json(
       { message: "Failed to send verification code" },
       { status: 500 }

@@ -4,11 +4,88 @@ import prisma from "@/lib/prisma";
 import bcrypt from "bcrypt";
 import { Resend } from "resend";
 import { sendMail } from "@/lib/mailer";
+import logger from "@/lib/logger";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+/**
+ * @swagger
+ * /api/password-reset/verify:
+ *   post:
+ *     summary: Verify password reset code and optionally update password
+ *     description: Verifies a password reset code and, if new password data is provided, updates the user's password. The code expires in 15 minutes.
+ *     tags: [Authentication]
+ *     security:
+ *       - BasicAuth: []
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - email
+ *               - code
+ *             properties:
+ *               email:
+ *                 type: string
+ *                 format: email
+ *                 example: user@example.com
+ *               code:
+ *                 type: string
+ *                 example: "123456"
+ *               newPassword:
+ *                 type: string
+ *                 example: "NewPassword123!"
+ *               confirmPassword:
+ *                 type: string
+ *                 example: "NewPassword123!"
+ *     responses:
+ *       200:
+ *         description: Successful code verification or password update
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: "Code verified successfully"
+ *       400:
+ *         description: Invalid input, expired code, or password mismatch
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: "Passwords do not match"
+ *       404:
+ *         description: User not found
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: "User not found"
+ *       500:
+ *         description: Internal server error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: "Update failed"
+ */
 export async function POST(request: NextRequest) {
   const { email, code, newPassword, confirmPassword } = await request.json();
+
+  logger.info("Processing password reset verification", { email });
 
   // Validate required fields for code verification
   if (
@@ -17,6 +94,7 @@ export async function POST(request: NextRequest) {
     !email.trim() ||
     !code.trim()
   ) {
+    logger.warn("Missing or invalid email/code", { email, code });
     return NextResponse.json(
       { message: "Email and code are required" },
       { status: 400 }
@@ -24,11 +102,13 @@ export async function POST(request: NextRequest) {
   }
 
   // Verify reset code
+  logger.debug("Verifying password reset code", { email, code });
   const passwordReset = await prisma.passwordReset.findUnique({
     where: { email },
   });
 
   if (!passwordReset || passwordReset.code !== code) {
+    logger.warn("Invalid or mismatched verification code", { email, code });
     return NextResponse.json(
       { message: "Invalid or expired verification code" },
       { status: 400 }
@@ -36,6 +116,10 @@ export async function POST(request: NextRequest) {
   }
 
   if (new Date(passwordReset.expiresAt) < new Date()) {
+    logger.warn("Verification code expired", {
+      email,
+      expiresAt: passwordReset.expiresAt,
+    });
     return NextResponse.json(
       { message: "Verification code has expired" },
       { status: 400 }
@@ -44,6 +128,7 @@ export async function POST(request: NextRequest) {
 
   // If newPassword and confirmPassword are not provided, this is a code verification request
   if (newPassword === undefined && confirmPassword === undefined) {
+    logger.info("Code verified successfully", { email });
     return NextResponse.json(
       { message: "Code verified successfully" },
       { status: 200 }
@@ -51,12 +136,17 @@ export async function POST(request: NextRequest) {
   }
 
   // Validate password reset fields
+  logger.debug("Validating password reset fields", {
+    hasNewPassword: !!newPassword,
+    hasConfirmPassword: !!confirmPassword,
+  });
   if (
     typeof newPassword !== "string" ||
     typeof confirmPassword !== "string" ||
     !newPassword.trim() ||
     !confirmPassword.trim()
   ) {
+    logger.warn("Missing or invalid password fields", { email });
     return NextResponse.json(
       { message: "New password and confirm password are required" },
       { status: 400 }
@@ -64,6 +154,7 @@ export async function POST(request: NextRequest) {
   }
 
   if (newPassword !== confirmPassword) {
+    logger.warn("Password mismatch", { email });
     return NextResponse.json(
       { message: "Passwords do not match" },
       { status: 400 }
@@ -71,6 +162,7 @@ export async function POST(request: NextRequest) {
   }
 
   if (newPassword.length < 8) {
+    logger.warn("Password too short", { email, length: newPassword.length });
     return NextResponse.json(
       { message: "Password must be at least 8 characters long" },
       { status: 400 }
@@ -78,14 +170,17 @@ export async function POST(request: NextRequest) {
   }
 
   // Get the user
+  logger.debug("Looking up user for password reset", { email });
   const user = await prisma.user.findUnique({ where: { email } });
   if (!user) {
+    logger.warn("User not found for password reset", { email });
     return NextResponse.json({ message: "User not found" }, { status: 404 });
   }
 
   // Ensure the new password is different
   const isSame = await bcrypt.compare(newPassword, user.password || "");
   if (isSame) {
+    logger.warn("New password same as current password", { email });
     return NextResponse.json(
       { message: "New password must be different from the current password" },
       { status: 400 }
@@ -93,6 +188,7 @@ export async function POST(request: NextRequest) {
   }
 
   // Hash and update the new password
+  logger.debug("Hashing and updating new password", { email });
   const hashedPassword = await bcrypt.hash(newPassword, 10);
   await prisma.user.update({
     where: { email },
@@ -103,10 +199,12 @@ export async function POST(request: NextRequest) {
   });
 
   // Delete used password reset entry
+  logger.debug("Deleting used password reset entry", { email });
   await prisma.passwordReset.delete({ where: { email } });
 
   // Optionally send confirmation email (only works if domain is verified)
   try {
+    logger.info("Sending password update confirmation email", { email });
     await sendMail(
       email,
       "Password Reset Verification Code",
@@ -176,11 +274,16 @@ export async function POST(request: NextRequest) {
         </html>
       `
     );
+    logger.info("Password update confirmation email sent", { email });
   } catch (error) {
-    console.error("Failed to send confirmation email:", error);
+    logger.error("Failed to send confirmation email", {
+      email,
+      error: error instanceof Error ? error.message : String(error),
+    });
     // Don't fail the request if email fails
   }
 
+  logger.info("Password updated successfully", { email });
   return NextResponse.json(
     { message: "Password updated successfully" },
     { status: 200 }
