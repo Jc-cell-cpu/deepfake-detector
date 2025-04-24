@@ -134,14 +134,14 @@ export default function LoginPage() {
 
                 {/* Animated gradient background that follows mouse */}
                 <motion.div
-                    className="absolute inset-0 bg-gradient-radial from-purple-600/10 to-transparent opacity-50"
+                    className="absolute inset-0 bg-gradient-radial from-purple-600/30 to-transparent"
                     style={{
                         background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(147, 51, 234, 0.15) 0%, rgba(0, 0, 0, 0) 60%)`,
                     }}
                 />
 
                 {/* Floating orbs */}
-                {[...Array(12)].map((_, i) => (
+                {/* {[...Array(12)].map((_, i) => (
                     <motion.div
                         key={i}
                         className="absolute rounded-full bg-purple-500/10"
@@ -163,7 +163,7 @@ export default function LoginPage() {
                             repeatType: "reverse",
                         }}
                     />
-                ))}
+                ))} */}
             </div>
 
             <motion.div
@@ -340,7 +340,7 @@ export default function LoginPage() {
                     </div>
 
                     {/* Social login options */}
-                    <div className="mt-8">
+                    {/* <div className="mt-8">
                         <div className="relative flex items-center justify-center">
                             <div className="border-t border-slate-700/50 w-full absolute"></div>
                             <span className="bg-slate-900 px-4 text-sm text-slate-400 relative z-10">Or continue with</span>
@@ -377,7 +377,7 @@ export default function LoginPage() {
                                 </svg>
                             </motion.button>
                         </div>
-                    </div>
+                    </div> */}
 
                     <div className="mt-8 text-center text-sm text-slate-400">
                         <p>

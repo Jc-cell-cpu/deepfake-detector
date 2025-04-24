@@ -3,7 +3,7 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import axios from "axios"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
@@ -19,7 +19,21 @@ export default function Signup() {
     const [name, setName] = useState("")
     const [error, setError] = useState<string | null>(null)
     const [isLoading, setIsLoading] = useState(false)
+
+    // For the animated background
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
     const router = useRouter()
+
+    useEffect(() => {
+        const handleMouseMove = (e: MouseEvent) => {
+            setMousePosition({ x: e.clientX, y: e.clientY });
+        };
+
+        window.addEventListener("mousemove", handleMouseMove);
+        return () => {
+            window.removeEventListener("mousemove", handleMouseMove);
+        };
+    }, []);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
@@ -43,8 +57,16 @@ export default function Signup() {
                 <div className="absolute top-0 left-0 right-0 h-full bg-gradient-to-b from-purple-900/20 to-transparent opacity-70" />
                 <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-slate-950 to-transparent" />
 
+                {/* Animated gradient background that follows mouse */}
+                <motion.div
+                    className="absolute inset-0 bg-gradient-radial from-purple-600/30 to-transparent"
+                    style={{
+                        background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(147, 51, 234, 0.15) 0%, rgba(0, 0, 0, 0) 60%)`,
+                    }}
+                />
+
                 {/* Glowing orbs */}
-                {Array.from({ length: 15 }).map((_, i) => (
+                {/* {Array.from({ length: 15 }).map((_, i) => (
                     <motion.div
                         key={`orb-${i}`}
                         className="absolute rounded-full blur-xl"
@@ -71,10 +93,10 @@ export default function Signup() {
                             ease: "easeInOut",
                         }}
                     />
-                ))}
+                ))} */}
 
                 {/* Floating particles */}
-                {Array.from({ length: 20 }).map((_, i) => (
+                {/* {Array.from({ length: 20 }).map((_, i) => (
                     <motion.div
                         key={`particle-${i}`}
                         className="absolute rounded-full"
@@ -101,7 +123,7 @@ export default function Signup() {
                             ease: "easeInOut",
                         }}
                     />
-                ))}
+                ))} */}
             </div>
 
             <motion.div
@@ -250,6 +272,46 @@ export default function Signup() {
                             </div>
                         </div>
                     </div>
+
+                    {/* Social login options */}
+                    {/* <div className="mt-8">
+                        <div className="relative flex items-center justify-center">
+                            <div className="border-t border-slate-700/50 w-full absolute"></div>
+                            <span className="bg-slate-900 px-4 text-sm text-slate-400 relative z-10">Or continue with</span>
+                        </div>
+
+                        <div className="mt-6 grid grid-cols-3 gap-3">
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="flex justify-center items-center py-2.5 px-4 rounded-lg bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 hover:bg-slate-700/50 transition-colors"
+                            >
+                                <svg className="h-5 w-5" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12.0003 2C6.47731 2 2.00031 6.477 2.00031 12C2.00031 16.991 5.65731 21.128 10.4383 21.879V14.89H7.89831V12H10.4383V9.797C10.4383 7.291 11.9323 5.907 14.2153 5.907C15.3103 5.907 16.4543 6.102 16.4543 6.102V8.562H15.1923C13.9503 8.562 13.5623 9.333 13.5623 10.124V12H16.3363L15.8933 14.89H13.5623V21.879C18.3433 21.129 22.0003 16.99 22.0003 12C22.0003 6.477 17.5233 2 12.0003 2Z" />
+                                </svg>
+                            </motion.button>
+
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="flex justify-center items-center py-2.5 px-4 rounded-lg bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 hover:bg-slate-700/50 transition-colors"
+                            >
+                                <svg className="h-5 w-5" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2C6.477 2 2 6.477 2 12C2 16.418 4.865 20.167 8.839 21.65C9.339 21.75 9.5 21.442 9.5 21.177C9.5 20.943 9.492 20.053 9.489 19.192C6.726 19.79 6.139 17.819 6.139 17.819C5.684 16.665 5.029 16.356 5.029 16.356C4.121 15.727 5.098 15.74 5.098 15.74C6.101 15.812 6.639 16.786 6.639 16.786C7.535 18.294 8.969 17.868 9.519 17.611C9.619 17.001 9.889 16.575 10.189 16.341C7.979 16.103 5.659 15.272 5.659 11.5C5.659 10.39 6.059 9.484 6.659 8.778C6.549 8.525 6.199 7.51 6.759 6.138C6.759 6.138 7.599 5.869 9.479 7.159C10.29 6.938 11.15 6.827 12 6.823C12.85 6.827 13.71 6.938 14.52 7.159C16.4 5.868 17.24 6.138 17.24 6.138C17.8 7.51 17.45 8.525 17.34 8.778C17.94 9.484 18.34 10.39 18.34 11.5C18.34 15.283 16.02 16.1 13.8 16.333C14.17 16.625 14.5 17.2 14.5 18.079C14.5 19.329 14.49 20.85 14.49 21.177C14.49 21.445 14.65 21.755 15.16 21.65C19.135 20.165 22 16.418 22 12C22 6.477 17.523 2 12 2Z" />
+                                </svg>
+                            </motion.button>
+
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="flex justify-center items-center py-2.5 px-4 rounded-lg bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 hover:bg-slate-700/50 transition-colors"
+                            >
+                                <svg className="h-5 w-5" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M21.35 11.1H12.18V13.83H18.69C18.36 17.64 15.19 19.27 12.19 19.27C8.36 19.27 5.22 16.25 5.22 12.27C5.22 8.29 8.36 5.27 12.19 5.27C15.68 5.27 17.16 7.13 17.16 7.13L19 5.27C19 5.27 16.71 2.63 12.18 2.63C6.84 2.63 2.85 7.06 2.85 12.27C2.85 17.48 6.84 21.91 12.18 21.91C17.71 21.91 21.35 18.4 21.35 13.24C21.35 12.24 21.35 11.1 21.35 11.1Z" />
+                                </svg>
+                            </motion.button>
+                        </div>
+                    </div> */}
 
                     <div className="mt-8 text-center text-sm text-slate-400">
                         <p>

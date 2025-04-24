@@ -149,16 +149,18 @@ export default function UploadForm() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto"
+            className="grid md:grid-cols-2 gap-8 items-start w-full max-w-7xl mx-auto" // Increased max width
         >
             {/* Upload Card */}
-            <Card className="bg-slate-800/50 backdrop-blur-md border-slate-700/50 shadow-xl overflow-hidden">
+            <Card className="bg-slate-800/70 backdrop-blur-md border-slate-700/50 shadow-xl overflow-hidden">
                 <CardHeader className="pb-0">
                     <CardTitle className="text-2xl text-white font-bold flex items-center gap-2">
                         <Upload className="h-5 w-5 text-purple-400" />
                         Image Upload
                     </CardTitle>
-                    <CardDescription>Upload an image to analyze for deepfake detection</CardDescription>
+                    <CardDescription className="text-slate-300">
+                        Upload an image to analyze for deepfake detection
+                    </CardDescription>
                 </CardHeader>
                 <CardContent className="p-6">
                     <form onSubmit={handleSubmit} className="space-y-6">
@@ -359,13 +361,15 @@ export default function UploadForm() {
             </Card>
 
             {/* Results Card */}
-            <Card className="bg-slate-800/50 backdrop-blur-md border-slate-700/50 shadow-xl h-full">
+            <Card className="bg-slate-800/70 backdrop-blur-md border-slate-700/50 shadow-xl h-full">
                 <CardHeader className="pb-0">
                     <CardTitle className="text-2xl text-white font-bold flex items-center gap-2">
                         <Shield className="h-5 w-5 text-purple-400" />
                         Analysis Results
                     </CardTitle>
-                    <CardDescription>View the deepfake detection analysis for your image</CardDescription>
+                    <CardDescription className="text-slate-300">
+                        View the deepfake detection analysis for your image
+                    </CardDescription>
                 </CardHeader>
                 <CardContent className="p-6">
                     <AnimatePresence mode="wait">
@@ -393,12 +397,12 @@ export default function UploadForm() {
                                     </motion.div>
                                 </div>
 
-                                <h3 className="text-2xl font-bold mb-2">Analysis Complete</h3>
+                                <h3 className="text-2xl text-white font-bold mb-2">Analysis Complete</h3>
                                 <p className="text-slate-300 mb-6">Here&apos;s what our AI detected:</p>
 
                                 <div className="bg-slate-800/80 border border-slate-700/50 rounded-lg p-6 mb-6">
                                     <div className="flex justify-between items-center mb-3">
-                                        <p className="text-xl font-semibold">
+                                        <p className="text-xl text-white font-semibold">
                                             {result.result === "real" || result.result === "Real" ? "Likely Authentic" : "Likely Deepfake"}
                                         </p>
                                         <Badge
@@ -466,7 +470,7 @@ export default function UploadForm() {
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 exit={{ opacity: 0 }}
-                                className="h-full flex flex-col items-center justify-center text-center p-6 min-h-[400px]"
+                                className="h-full flex flex-col items-center justify-center text-center p-[40px] pt-[1px] min-h-[370px]"
                             >
                                 <div className="mb-6 opacity-70">
                                     <motion.div
@@ -479,10 +483,10 @@ export default function UploadForm() {
                                             repeat: Number.POSITIVE_INFINITY,
                                             repeatType: "reverse",
                                         }}
-                                        className="w-24 h-24 mx-auto"
+                                        className="w-40 h-40 mx-auto"
                                     >
                                         <svg
-                                            viewBox="0 0 24 24"
+                                            viewBox="0 0 23 23"
                                             fill="none"
                                             xmlns="http://www.w3.org/2000/svg"
                                             className="w-full h-full text-purple-400"
@@ -511,7 +515,7 @@ export default function UploadForm() {
                                     manipulation.
                                 </p>
 
-                                <div className="mt-8 grid grid-cols-3 gap-4 w-full max-w-xs">
+                                {/* <div className="mt-8 grid grid-cols-3 gap-4 w-full max-w-xs">
                                     {[...Array(3)].map((_, i) => (
                                         <motion.div
                                             key={i}
@@ -526,7 +530,7 @@ export default function UploadForm() {
                                             className="aspect-square rounded-lg bg-purple-500/10"
                                         />
                                     ))}
-                                </div>
+                                </div> */}
                             </motion.div>
                         )}
                     </AnimatePresence>
