@@ -43,7 +43,7 @@ export default function Footer() {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/api" className="text-slate-400 hover:text-purple-400 transition-colors">
+                                <Link href="/apis" className="text-slate-400 hover:text-purple-400 transition-colors">
                                     API
                                 </Link>
                             </li>

@@ -357,3 +357,156 @@
 2025-04-24 21:39:59 [INFO]: Checked 2FA status {"email":"kkjj52123@gmail.com","twoFactorEnabled":false}
 2025-04-24 21:40:18 [INFO]: Checked 2FA status {"email":"kkjj52123@gmail.com","twoFactorEnabled":false}
 2025-04-24 21:46:53 [INFO]: Checked 2FA status {"email":"kkjj52123@gmail.com","twoFactorEnabled":false}
+2025-04-24 22:53:12 [INFO]: Checked 2FA status {"email":"kkjj52123@gmail.com","twoFactorEnabled":false}
+2025-04-24 22:53:14 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-24 22:53:14 [DEBUG]: User details {"email":"kkjj52123@gmail.com","twoFactorEnabled":false,"twoFactorSecret":"not set"}
+2025-04-24 22:53:14 [INFO]: Password is valid {"email":"kkjj52123@gmail.com"}
+2025-04-24 22:53:14 [INFO]: 2FA not enabled for user {"email":"kkjj52123@gmail.com"}
+2025-04-24 22:53:14 [DEBUG]: Updated JWT token {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 22:53:15 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 22:53:16 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 22:53:16 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-24 22:53:16 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-24 22:53:16 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-24 22:53:18 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 22:53:18 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 22:53:18 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-24 22:53:18 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-24 22:53:18 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-24 22:53:37 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 22:54:03 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 22:54:11 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 22:56:54 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 22:57:25 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 22:57:38 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 22:58:43 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 22:58:56 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:00:56 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:01:06 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:01:07 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:01:07 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-24 23:01:07 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-24 23:01:07 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-24 23:01:22 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:02:47 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:02:53 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:02:53 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:02:53 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-24 23:02:53 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-24 23:02:53 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-24 23:03:09 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:03:13 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:03:24 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:04:59 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:05:46 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:05:52 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:05:53 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:05:53 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-24 23:05:53 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-24 23:05:53 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-24 23:06:06 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:06:18 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:06:38 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:06:48 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:06:52 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:06:55 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:07:30 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:07:43 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:08:04 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:08:17 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:08:29 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:11:53 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:12:28 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:12:29 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:12:29 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-24 23:12:29 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-24 23:12:29 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-24 23:12:37 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:12:38 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:12:38 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-24 23:12:38 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-24 23:12:38 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-24 23:13:51 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:13:57 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:14:07 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:22:52 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:22:53 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:22:53 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-24 23:22:53 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-24 23:22:53 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-24 23:22:57 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:23:34 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:23:47 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:23:49 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:23:49 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-24 23:23:49 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-24 23:23:49 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-24 23:27:00 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:28:36 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:28:38 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:28:38 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-24 23:28:38 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-24 23:28:38 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-24 23:29:03 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:29:04 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:29:04 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-24 23:29:04 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-24 23:29:04 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-24 23:29:19 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:33:54 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:34:44 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:34:52 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:34:52 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:34:52 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-24 23:34:52 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-24 23:34:52 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-24 23:34:57 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:35:48 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:38:16 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:38:58 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:38:58 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:38:58 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-24 23:38:58 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-24 23:38:58 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-24 23:39:06 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:39:08 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:39:08 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-24 23:39:08 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-24 23:39:08 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-24 23:39:13 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:46:12 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:46:57 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:47:24 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:48:11 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:48:27 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:48:35 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:48:46 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:49:27 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:51:46 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:51:48 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:51:50 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:51:51 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:51:51 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-24 23:51:51 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-24 23:51:51 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-24 23:52:00 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:52:21 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:53:22 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:53:38 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:53:39 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:53:42 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:53:44 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:55:29 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:55:37 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:56:29 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:56:39 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:57:18 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:57:59 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:58:05 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:58:07 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:58:07 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-24 23:58:07 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-24 23:58:07 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-24 23:58:23 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:58:52 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-24 23:58:53 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}

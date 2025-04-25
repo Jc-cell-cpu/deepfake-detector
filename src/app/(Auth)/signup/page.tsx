@@ -135,7 +135,7 @@ export default function Signup() {
                 <Link href="/" className="flex items-center gap-2 text-2xl font-bold mb-8">
                     <Shield className="h-8 w-8 text-purple-500" />
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500">
-                        Deepfake Detector
+                        DefakeZone
                     </span>
                 </Link>
 

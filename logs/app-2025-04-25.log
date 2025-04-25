@@ -1,0 +1,172 @@
+2025-04-25 00:00:28 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 00:00:31 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 00:00:33 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 00:00:33 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-25 00:00:33 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-25 00:00:33 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-25 00:01:12 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 00:01:13 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 00:01:14 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 00:01:14 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-25 00:01:14 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-25 00:01:14 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-25 00:01:55 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 00:02:07 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 00:02:25 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 00:04:16 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 00:04:19 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 00:04:20 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 00:04:20 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-25 00:04:20 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-25 00:04:20 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-25 00:04:23 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 00:04:25 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 00:04:25 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-25 00:04:25 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-25 00:04:25 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-25 00:04:42 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 00:05:07 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 00:05:10 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 00:05:12 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 00:05:12 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-25 00:05:12 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-25 00:05:12 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-25 00:05:39 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 00:05:42 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 00:05:42 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-25 00:05:42 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-25 00:05:43 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-25 10:32:54 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:33:41 [INFO]: Checked 2FA status {"email":"kkjj52123@gmail.com","twoFactorEnabled":false}
+2025-04-25 10:33:43 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-25 10:33:43 [DEBUG]: User details {"email":"kkjj52123@gmail.com","twoFactorEnabled":false,"twoFactorSecret":"not set"}
+2025-04-25 10:33:43 [INFO]: Password is valid {"email":"kkjj52123@gmail.com"}
+2025-04-25 10:33:43 [INFO]: 2FA not enabled for user {"email":"kkjj52123@gmail.com"}
+2025-04-25 10:33:43 [DEBUG]: Updated JWT token {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:33:44 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:33:44 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:33:44 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-25 10:33:44 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-25 10:33:44 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-25 10:33:47 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:33:48 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:33:48 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-25 10:33:48 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-25 10:33:48 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-25 10:34:08 [INFO]: Checked 2FA status {"email":"kkjj52123@gmail.com","twoFactorEnabled":false}
+2025-04-25 10:34:09 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-25 10:34:09 [DEBUG]: User details {"email":"kkjj52123@gmail.com","twoFactorEnabled":false,"twoFactorSecret":"not set"}
+2025-04-25 10:34:09 [INFO]: Password is valid {"email":"kkjj52123@gmail.com"}
+2025-04-25 10:34:09 [INFO]: 2FA not enabled for user {"email":"kkjj52123@gmail.com"}
+2025-04-25 10:34:09 [DEBUG]: Updated JWT token {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:34:10 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:34:11 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:34:11 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-25 10:34:11 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-25 10:34:11 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-25 10:34:14 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:34:15 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:34:15 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-25 10:34:15 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-25 10:34:15 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-25 10:34:20 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:34:20 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-25 10:34:20 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-25 10:34:20 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-25 10:34:20 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:34:20 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-25 10:34:20 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-25 10:34:20 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-25 10:34:28 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:34:28 [INFO]: Attempting to soft delete user account {"userEmail":"kkjj52123@gmail.com"}
+2025-04-25 10:34:28 [DEBUG]: Soft deleting user account {"userId":1}
+2025-04-25 10:34:28 [INFO]: User account soft deleted successfully {"userId":1}
+2025-04-25 10:34:39 [INFO]: Checked 2FA status {"email":"kkjj52123@gmail.com","twoFactorEnabled":false}
+2025-04-25 10:34:40 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-25 10:34:40 [WARN]: User account is inactive {"email":"kkjj52123@gmail.com"}
+2025-04-25 10:34:54 [INFO]: Attempting to send verification email {"email":"kkjj52123@gmail.com"}
+2025-04-25 10:34:58 [INFO]: Reactivation code sent {"email":"kkjj52123@gmail.com"}
+2025-04-25 10:35:30 [INFO]: Account reactivated successfully {"email":"kkjj52123@gmail.com"}
+2025-04-25 10:35:33 [INFO]: Checked 2FA status {"email":"kkjj52123@gmail.com","twoFactorEnabled":false}
+2025-04-25 10:35:36 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-25 10:35:36 [DEBUG]: User details {"email":"kkjj52123@gmail.com","twoFactorEnabled":false,"twoFactorSecret":"not set"}
+2025-04-25 10:35:36 [INFO]: Password is valid {"email":"kkjj52123@gmail.com"}
+2025-04-25 10:35:36 [INFO]: 2FA not enabled for user {"email":"kkjj52123@gmail.com"}
+2025-04-25 10:35:36 [DEBUG]: Updated JWT token {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:35:37 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:35:38 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:35:38 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-25 10:35:38 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-25 10:35:38 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-25 10:35:40 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:35:41 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:35:41 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-25 10:35:41 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-25 10:35:41 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-25 10:39:42 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:42:12 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:42:13 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:42:15 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:42:43 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:42:44 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:42:44 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-25 10:42:44 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-25 10:42:44 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-25 10:42:49 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:42:49 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:42:49 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-25 10:42:49 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-25 10:42:49 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-25 10:43:03 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:43:04 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:43:04 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-25 10:43:04 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-25 10:43:04 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-25 10:43:19 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:43:19 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-25 10:43:19 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-25 10:43:19 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-25 10:43:20 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:43:20 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-25 10:43:20 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-25 10:43:20 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-25 10:49:07 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:49:09 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:49:09 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-25 10:49:09 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-25 10:49:09 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-25 10:49:10 [INFO]: Checked 2FA status {"email":"kkjj52123@gmail.com","twoFactorEnabled":false}
+2025-04-25 10:49:13 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:49:15 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:49:15 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-25 10:49:15 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-25 10:49:16 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-25 10:49:31 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:49:33 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:49:33 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-25 10:49:33 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-25 10:49:33 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-25 10:50:27 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:50:27 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-25 10:50:27 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-25 10:50:27 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-25 10:50:28 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:50:28 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-25 10:50:28 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-25 10:50:28 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-25 10:50:48 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:50:48 [INFO]: Attempting to update user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-25 10:50:48 [DEBUG]: Image processed for update {"hasImage":true}
+2025-04-25 10:50:48 [DEBUG]: Updating user profile {"userId":1,"updateData":{"name":"JC","username":"JC69","image":"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"}}
+2025-04-25 10:50:48 [INFO]: User profile updated successfully {"userId":1}
+2025-04-25 10:50:50 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:51:00 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:51:00 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-25 10:51:00 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-25 10:51:00 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-25 10:51:01 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:51:01 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-25 10:51:01 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-25 10:51:02 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-25 10:51:33 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:51:44 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
