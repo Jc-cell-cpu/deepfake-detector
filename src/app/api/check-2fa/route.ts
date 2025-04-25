@@ -1,84 +1,55 @@
-import { NextRequest, NextResponse } from "next/server";
-import { PrismaClient } from "@prisma/client";
-import logger from "@/lib/logger";
+/* eslint-disable @typescript-eslint/no-unused-vars */
+// src/app/api/check-2fa/route.ts
+import { NextResponse } from "next/server";
+import prisma from "@/lib/prisma";
 
-const prisma = new PrismaClient();
+export async function POST(req: Request) {
+  try {
+    // Check if the request body is present and valid
+    const contentType = req.headers.get("Content-Type");
+    if (!contentType || !contentType.includes("application/json")) {
+      return NextResponse.json(
+        { error: "Content-Type must be application/json" },
+        { status: 400 }
+      );
+    }
 
-/**
- * @swagger
- * /api/check-2fa:
- *   post:
- *     summary: Check if 2FA is enabled for a given user
- *     tags:
- *       - Authentication
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             required:
- *               - email
- *             properties:
- *               email:
- *                 type: string
- *                 format: email
- *                 example: user@example.com
- *     responses:
- *       200:
- *         description: 2FA status retrieved successfully
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 twoFactorEnabled:
- *                   type: boolean
- *                   example: true
- *       400:
- *         description: Missing email in request
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 message:
- *                   type: string
- *                   example: Email is required
- *       404:
- *         description: User not found
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 message:
- *                   type: string
- *                   example: User not found
- */
-export async function POST(request: NextRequest) {
-  const { email } = await request.json();
+    // Read the body once and parse it
+    const body = await req.text();
+    if (!body) {
+      return NextResponse.json(
+        { error: "Request body is empty" },
+        { status: 400 }
+      );
+    }
 
-  if (!email) {
-    logger.warn("Missing email in check-2fa request");
-    return NextResponse.json({ message: "Email is required" }, { status: 400 });
+    let parsedBody;
+    try {
+      parsedBody = JSON.parse(body);
+    } catch (parseError) {
+      return NextResponse.json(
+        { error: "Invalid JSON format" },
+        { status: 400 }
+      );
+    }
+
+    const { email } = parsedBody;
+
+    if (!email) {
+      return NextResponse.json({ error: "Email is required" }, { status: 400 });
+    }
+
+    const user = await prisma.user.findUnique({
+      where: { email },
+      select: { twoFactorEnabled: true },
+    });
+
+    return NextResponse.json({ twoFactorEnabled: !!user?.twoFactorEnabled });
+  } catch (error) {
+    console.error("Error processing 2FA check:", error);
+    return NextResponse.json(
+      { error: "Internal server error" },
+      { status: 500 }
+    );
   }
-
-  const user = await prisma.user.findUnique({
-    where: { email },
-  });
-
-  if (!user) {
-    logger.warn("User not found in check-2fa", { email });
-    return NextResponse.json({ message: "User not found" }, { status: 404 });
-  }
-
-  logger.info("Checked 2FA status", {
-    email,
-    twoFactorEnabled: user.twoFactorEnabled,
-  });
-
-  return NextResponse.json({
-    twoFactorEnabled: user.twoFactorEnabled && !!user.twoFactorSecret,
-  });
 }

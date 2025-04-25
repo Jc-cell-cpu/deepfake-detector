@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { withAuth } from "next-auth/middleware";
 import { NextResponse, NextRequest } from "next/server";
 
@@ -55,9 +56,10 @@ export default withAuth(
       return NextResponse.redirect(new URL("/login", req.url));
     }
   },
+
   {
     callbacks: {
-      authorized: ({ token }) => !!token?.id, // Only allow fully authenticated users
+      authorized: ({ token }) => !!token?.id,
     },
     pages: {
       signIn: "/login",

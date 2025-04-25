@@ -170,3 +170,220 @@
 2025-04-25 10:51:02 [INFO]: User profile fetched successfully {"userId":1}
 2025-04-25 10:51:33 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
 2025-04-25 10:51:44 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:54:06 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:54:08 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:54:39 [INFO]: Checked 2FA status {"email":"kkjj52123@gmail.com","twoFactorEnabled":false}
+2025-04-25 10:54:43 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-25 10:54:43 [DEBUG]: User details {"email":"kkjj52123@gmail.com","twoFactorEnabled":false,"twoFactorSecret":"not set"}
+2025-04-25 10:54:44 [INFO]: Password is valid {"email":"kkjj52123@gmail.com"}
+2025-04-25 10:54:44 [INFO]: 2FA not enabled for user {"email":"kkjj52123@gmail.com"}
+2025-04-25 10:54:44 [DEBUG]: Updated JWT token {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 10:57:58 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-25 10:57:58 [DEBUG]: User details {"email":"kkjj52123@gmail.com","twoFactorEnabled":false,"twoFactorSecret":"not set"}
+2025-04-25 10:57:58 [INFO]: Password is valid {"email":"kkjj52123@gmail.com"}
+2025-04-25 10:57:59 [INFO]: 2FA not enabled for user {"email":"kkjj52123@gmail.com"}
+2025-04-25 10:57:59 [DEBUG]: Updated JWT token {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 11:00:51 [INFO]: Checked 2FA status {"email":"kkjj52123@gmail.com","twoFactorEnabled":false}
+2025-04-25 11:00:52 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:00:52 [DEBUG]: User details {"email":"kkjj52123@gmail.com","twoFactorEnabled":false,"twoFactorSecret":"not set"}
+2025-04-25 11:00:52 [INFO]: Password is valid {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:00:52 [INFO]: 2FA not enabled for user {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:00:52 [DEBUG]: Updated JWT token {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 11:07:33 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:07:33 [DEBUG]: User details {"email":"kkjj52123@gmail.com","twoFactorEnabled":false}
+2025-04-25 11:07:33 [INFO]: Password is valid {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:07:33 [INFO]: 2FA not enabled for user {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:07:33 [DEBUG]: Updated JWT token {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 11:07:55 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:07:55 [DEBUG]: User details {"email":"kkjj52123@gmail.com","twoFactorEnabled":false}
+2025-04-25 11:07:55 [INFO]: Password is valid {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:07:55 [INFO]: 2FA not enabled for user {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:07:55 [DEBUG]: Updated JWT token {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 11:14:16 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:14:16 [DEBUG]: User details {"email":"kkjj52123@gmail.com","twoFactorEnabled":false}
+2025-04-25 11:14:16 [INFO]: Password is valid {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:14:16 [INFO]: 2FA not enabled for user {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:14:16 [DEBUG]: Updated JWT token {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 11:17:53 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:17:53 [DEBUG]: User details {"email":"kkjj52123@gmail.com","twoFactorEnabled":false}
+2025-04-25 11:17:53 [INFO]: Password is valid {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:17:53 [INFO]: 2FA not enabled for user {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:17:53 [DEBUG]: Updated JWT token {"userId":"1","email":"kkjj52123@gmail.com","tokenSize":25641}
+2025-04-25 11:18:38 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:18:38 [DEBUG]: User details {"email":"kkjj52123@gmail.com","twoFactorEnabled":false}
+2025-04-25 11:18:38 [INFO]: Password is valid {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:18:38 [INFO]: 2FA not enabled for user {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:18:38 [DEBUG]: Updated JWT token {"userId":"1","email":"kkjj52123@gmail.com","tokenSize":25641}
+2025-04-25 11:21:36 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:21:36 [DEBUG]: User details {"email":"kkjj52123@gmail.com","twoFactorEnabled":false}
+2025-04-25 11:21:36 [INFO]: Password is valid {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:21:36 [INFO]: 2FA not enabled for user {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:21:36 [DEBUG]: Updated JWT token {"userId":"1","email":"kkjj52123@gmail.com","tokenSize":25641}
+2025-04-25 11:23:00 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:23:00 [DEBUG]: User details {"email":"kkjj52123@gmail.com","twoFactorEnabled":false}
+2025-04-25 11:23:00 [INFO]: Password is valid {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:23:00 [INFO]: 2FA not enabled for user {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:23:00 [DEBUG]: Updated JWT token {"userId":"1","email":"kkjj52123@gmail.com","tokenSize":25641}
+2025-04-25 11:27:18 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:27:18 [DEBUG]: User details {"email":"kkjj52123@gmail.com","twoFactorEnabled":false}
+2025-04-25 11:27:18 [INFO]: Password is valid {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:27:18 [INFO]: 2FA not enabled for user {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:27:18 [DEBUG]: Updated JWT token {"userId":"1","email":"kkjj52123@gmail.com","tokenSize":25641}
+2025-04-25 11:31:07 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:31:07 [DEBUG]: User details {"email":"kkjj52123@gmail.com","twoFactorEnabled":false}
+2025-04-25 11:31:07 [INFO]: Password is valid {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:31:07 [INFO]: 2FA not enabled for user {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:31:07 [DEBUG]: Updated JWT token {"userId":"1","email":"kkjj52123@gmail.com","tokenSize":62}
+2025-04-25 11:34:29 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:34:29 [DEBUG]: User details {"email":"kkjj52123@gmail.com","twoFactorEnabled":false}
+2025-04-25 11:34:30 [INFO]: Password is valid {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:34:30 [INFO]: 2FA not enabled for user {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:34:30 [DEBUG]: Updated JWT token {"userId":"1","email":"kkjj52123@gmail.com","tokenSize":62}
+2025-04-25 11:35:06 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:35:06 [DEBUG]: User details {"email":"kkjj52123@gmail.com","twoFactorEnabled":false}
+2025-04-25 11:35:06 [INFO]: Password is valid {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:35:06 [INFO]: 2FA not enabled for user {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:35:06 [DEBUG]: Updated JWT token {"userId":"1","email":"kkjj52123@gmail.com","tokenSize":62}
+2025-04-25 11:37:46 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:37:46 [DEBUG]: User details {"email":"kkjj52123@gmail.com","twoFactorEnabled":false}
+2025-04-25 11:37:46 [INFO]: Password is valid {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:37:46 [INFO]: 2FA not enabled for user {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:37:46 [DEBUG]: Updated JWT token {"userId":"1","email":"kkjj52123@gmail.com","tokenSize":62}
+2025-04-25 11:37:46 [INFO]: Sign-in event {"user":{"id":"1","email":"kkjj52123@gmail.com","name":"JC"},"account":{"providerAccountId":"1","type":"credentials","provider":"credentials"}}
+2025-04-25 11:40:27 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:40:27 [DEBUG]: User details {"email":"kkjj52123@gmail.com","twoFactorEnabled":false}
+2025-04-25 11:40:27 [INFO]: Password is valid {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:40:27 [INFO]: 2FA not enabled for user {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:40:27 [DEBUG]: JWT callback executed {"userId":"1","email":"kkjj52123@gmail.com","tokenSize":62}
+2025-04-25 11:40:27 [INFO]: Sign-in event {"user":{"id":"1","email":"kkjj52123@gmail.com","name":"JC"},"account":{"providerAccountId":"1","type":"credentials","provider":"credentials"}}
+2025-04-25 11:43:04 [INFO]: Authorize called {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:43:04 [DEBUG]: JWT callback called {"user":{"id":"1","email":"kkjj52123@gmail.com","name":"JC"},"token":{"name":"JC","email":"kkjj52123@gmail.com","sub":"1"}}
+2025-04-25 11:43:04 [DEBUG]: JWT token updated {"token":{"name":"JC","email":"kkjj52123@gmail.com","sub":"1","id":"1"},"tokenSize":62}
+2025-04-25 11:43:05 [INFO]: Sign-in event {"user":{"id":"1","email":"kkjj52123@gmail.com","name":"JC"},"account":{"providerAccountId":"1","type":"credentials","provider":"credentials"}}
+2025-04-25 11:52:12 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:52:12 [DEBUG]: User details {"email":"kkjj52123@gmail.com","twoFactorEnabled":false}
+2025-04-25 11:52:13 [INFO]: Password is valid {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:52:13 [INFO]: 2FA not enabled for user {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:52:13 [DEBUG]: JWT callback executed {"userId":"1","email":"kkjj52123@gmail.com","tokenSize":62}
+2025-04-25 11:52:13 [INFO]: Sign-in event {"user":{"id":"1","email":"kkjj52123@gmail.com","name":"JC"},"account":{"providerAccountId":"1","type":"credentials","provider":"credentials"}}
+2025-04-25 11:55:29 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:55:30 [DEBUG]: User details {"email":"kkjj52123@gmail.com","twoFactorEnabled":false,"twoFactorSecret":"not set"}
+2025-04-25 11:55:30 [INFO]: Password is valid {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:55:30 [INFO]: 2FA not enabled for user {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:55:30 [DEBUG]: Updated JWT token {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 11:59:55 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:59:55 [DEBUG]: User details {"email":"kkjj52123@gmail.com","twoFactorEnabled":false,"twoFactorSecret":"not set"}
+2025-04-25 11:59:55 [INFO]: Password is valid {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:59:55 [INFO]: 2FA not enabled for user {"email":"kkjj52123@gmail.com"}
+2025-04-25 11:59:55 [DEBUG]: Updated JWT token {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 12:05:20 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-25 12:05:21 [DEBUG]: Updated JWT token {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 12:55:22 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-25 12:55:22 [DEBUG]: Updated JWT token {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 13:45:48 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-25 13:45:48 [DEBUG]: Updated JWT token {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 13:47:18 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-25 13:47:18 [DEBUG]: Updated JWT token {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 13:52:42 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-25 13:52:42 [DEBUG]: Updated JWT token {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 14:10:05 [WARN]: No session token found 
+2025-04-25 14:10:05 [WARN]: No session token found 
+2025-04-25 14:10:11 [INFO]: Login attempt {"email":"kkjj52123@gmail.com"}
+2025-04-25 14:10:11 [ERROR]: Login error {"error":{}}
+2025-04-25 14:11:54 [WARN]: No session token found 
+2025-04-25 14:12:01 [INFO]: Login attempt {"email":"kkjj52123@gmail.com"}
+2025-04-25 14:12:01 [ERROR]: JWT_SECRET not set 
+2025-04-25 14:13:25 [WARN]: No session token found 
+2025-04-25 14:13:31 [INFO]: Login attempt {"email":"kkjj52123@gmail.com"}
+2025-04-25 14:13:31 [INFO]: Login successful {"email":"kkjj52123@gmail.com","userId":1}
+2025-04-25 14:13:32 [WARN]: No session token found 
+2025-04-25 14:16:00 [WARN]: No session token found 
+2025-04-25 14:16:04 [INFO]: Login attempt {"email":"kkjj52123@gmail.com"}
+2025-04-25 14:16:04 [INFO]: Login successful {"email":"kkjj52123@gmail.com","userId":1}
+2025-04-25 14:16:06 [WARN]: No session token found 
+2025-04-25 14:17:36 [WARN]: No session token found 
+2025-04-25 14:17:45 [INFO]: Login attempt {"email":"kkjj52123@gmail.com"}
+2025-04-25 14:17:45 [DEBUG]: Generated token size {"tokenLength":180}
+2025-04-25 14:17:45 [INFO]: Login successful {"email":"kkjj52123@gmail.com","userId":1}
+2025-04-25 14:17:46 [INFO]: Session verified {"email":"kkjj52123@gmail.com"}
+2025-04-25 14:17:50 [INFO]: Session verified {"email":"kkjj52123@gmail.com"}
+2025-04-25 14:17:57 [INFO]: Fetching user profile {}
+2025-04-25 14:17:57 [WARN]: Unauthorized access attempt to profile 
+2025-04-25 14:21:16 [INFO]: Session verified {"email":"kkjj52123@gmail.com"}
+2025-04-25 14:21:19 [INFO]: Fetching user profile 
+2025-04-25 14:21:19 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-25 14:21:19 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-25 14:21:52 [INFO]: Session verified {"email":"kkjj52123@gmail.com"}
+2025-04-25 14:21:54 [INFO]: Fetching user profile 
+2025-04-25 14:21:54 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-25 14:21:54 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-25 14:22:18 [INFO]: Processing image upload {}
+2025-04-25 14:22:18 [WARN]: Unauthorized access attempt to upload endpoint 
+2025-04-25 14:22:29 [INFO]: Session verified {"email":"kkjj52123@gmail.com"}
+2025-04-25 14:22:30 [INFO]: Fetching user profile 
+2025-04-25 14:22:30 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-25 14:22:30 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-25 14:23:26 [INFO]: Session verified {"email":"kkjj52123@gmail.com"}
+2025-04-25 14:23:31 [INFO]: Session verified {"email":"kkjj52123@gmail.com"}
+2025-04-25 14:23:34 [INFO]: Fetching user profile {}
+2025-04-25 14:23:34 [WARN]: Unauthorized access attempt to profile 
+2025-04-25 14:23:41 [INFO]: Session verified {"email":"kkjj52123@gmail.com"}
+2025-04-25 14:23:44 [INFO]: Fetching user profile {}
+2025-04-25 14:23:44 [WARN]: Unauthorized access attempt to profile 
+2025-04-25 14:23:49 [INFO]: Session verified {"email":"kkjj52123@gmail.com"}
+2025-04-25 14:23:51 [INFO]: Fetching user profile {}
+2025-04-25 14:23:51 [WARN]: Unauthorized access attempt to profile 
+2025-04-25 14:23:57 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-25 14:23:57 [DEBUG]: Updated JWT token {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 14:25:01 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-25 14:25:01 [DEBUG]: Updated JWT token {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 14:38:28 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-25 14:44:55 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-25 14:44:55 [DEBUG]: Updated JWT token {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 14:47:00 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-25 14:47:00 [DEBUG]: Updated JWT token {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 15:00:44 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-25 15:00:45 [DEBUG]: Updated JWT token {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 15:05:21 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-25 15:05:21 [DEBUG]: Updated JWT token {"userId":"1"}
+2025-04-25 15:05:25 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-25 15:05:25 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-25 15:05:25 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-25 15:05:30 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-25 15:05:30 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-25 15:05:30 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-25 15:12:43 [DEBUG]: Updated session {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 15:13:05 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-25 15:13:05 [DEBUG]: Updated JWT token {"userId":"1","email":"kkjj52123@gmail.com"}
+2025-04-25 15:13:52 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-25 15:13:52 [DEBUG]: Updated JWT token {"userId":"1"}
+2025-04-25 15:14:20 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-25 15:14:20 [DEBUG]: Updated JWT token {"userId":"1"}
+2025-04-25 15:14:22 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-25 15:14:22 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-25 15:14:22 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-25 15:14:26 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-25 15:14:26 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-25 15:14:26 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-25 15:16:33 [INFO]: Starting authorization {"email":"kkjj52123@gmail.com"}
+2025-04-25 15:16:34 [DEBUG]: Updated JWT token {"userId":"1"}
+2025-04-25 15:16:35 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-25 15:16:35 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-25 15:16:35 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-25 15:16:39 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-25 15:16:39 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-25 15:16:39 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-25 15:18:05 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-25 15:18:05 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-25 15:18:05 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-25 15:18:06 [INFO]: Fetching user profile {"userEmail":"kkjj52123@gmail.com"}
+2025-04-25 15:18:06 [DEBUG]: Looking up user {"email":"kkjj52123@gmail.com"}
+2025-04-25 15:18:06 [INFO]: User profile fetched successfully {"userId":1}
+2025-04-25 15:34:42 [INFO]: Processing image upload {"userId":"1"}
+2025-04-25 15:34:42 [DEBUG]: Validating file {"fileName":"fake_10001.jpg","fileType":"image/jpeg","fileSize":11667}
+2025-04-25 15:34:42 [DEBUG]: Checking file signature {"fileExt":"jpg","signature":"ffd8ffe0"}
+2025-04-25 15:34:42 [DEBUG]: Processing image with sharp {"fileName":"fd153465-dc11-4e12-9386-8601651e6596.jpg"}
+2025-04-25 15:34:43 [DEBUG]: Saving processed image {"filePath":"D:/College_Minor_Project/deepfake-detector/public/uploads/fd153465-dc11-4e12-9386-8601651e6596.jpg"}
+2025-04-25 15:34:43 [INFO]: Running inference on image {"filePath":"D:/College_Minor_Project/deepfake-detector/public/uploads/fd153465-dc11-4e12-9386-8601651e6596.jpg","userId":"1"}
+2025-04-25 15:34:46 [DEBUG]: Saving image record to database {"filePath":"D:/College_Minor_Project/deepfake-detector/public/uploads/fd153465-dc11-4e12-9386-8601651e6596.jpg","userId":"1"}
+2025-04-25 15:34:46 [INFO]: Image processed successfully {"imageId":4,"result":"Real","probability":0.30304147511883417,"userId":"1"}
